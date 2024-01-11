@@ -1,97 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'base.html' %}
+{% load static %}
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CarPool-Connect</title>
+{% block extrahead %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+{% endblock extrahead %}
 
-  <!-- 
-    - favicon
-  -->
-  <link rel="icon" type="image/x-icon" href="./assets/images/favicion-image.png">
-
-  <!-- 
-    - custom css link
-  -->
-  <link rel="stylesheet" href="./assets/css/style.css">
-
-  <!-- 
-    - google font link
-  -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600&family=Open+Sans&display=swap"
-    rel="stylesheet">
-</head>
-
-<body>
-
-  <!-- 
-       HEADER
-  -->
-
-  <header class="header" data-header>
-    <div class="container">
-
-      <div class="overlay" data-overlay></div>
-
-      <a href="#" class="logo">
-        <img src="./assets/images/carpool-connect-logo.png" height="180" alt="CarPool-Connect-logo">
-      </a>
-
-      <nav class="navbar" data-navbar>
-        <ul class="navbar-list">
-
-          <li>
-            <a href="#home" class="navbar-link" data-nav-link>Home</a>
-          </li>
-
-          <li>
-            <a href="#featured-car" class="navbar-link" data-nav-link>Explore cars</a>
-          </li>
-
-          <li>
-            <a href="../aboutUs/aboutUs.html" class="navbar-link" data-nav-link>About us</a>
-          </li>
-
-          <li>
-            <a href="#reviews" class="navbar-link" data-nav-link>reviews</a>
-          </li>
-
-        </ul>
-      </nav>
-
-      <div class="header-actions">
-
-        <div class="header-contact">
-          <a href="tel:88002345678" class="contact-link">8 800 234 56 78</a>
-
-          <span class="contact-time">24/7 Services</span>
-        </div>
-
-        <a href="#featured-car" class="btn" aria-labelledby="aria-label-txt">
-          <ion-icon name="car-outline"></ion-icon>
-
-          <span id="aria-label-txt">Explore cars</span>
-        </a>
-
-        <a href="./signupStyle.html" class="btn user-btn" aria-label="Profile">
-          <ion-icon name="person-outline"></ion-icon>
-        </a>
-
-        <button class="nav-toggle-btn" data-nav-toggle-btn aria-label="Toggle Menu">
-          <span class="one"></span>
-          <span class="two"></span>
-          <span class="three"></span>
-        </button>
-
-      </div>
-
-    </div>
-  </header>
-
+{% block content %}
   <main>
     <article>
 
@@ -169,7 +83,7 @@
               <div class="featured-car-card">
 
                 <figure class="card-banner">
-                  <img src="./assets/images/Swift.jpg" alt="Maruti Suzuki Swift" loading="lazy" width="440" height="300"
+                  <img src="{% static 'images/Swift.jpg' %}" alt="Maruti Suzuki Swift" loading="lazy" width="440" height="300"
                     class="w-100">
                 </figure>
 
@@ -228,7 +142,7 @@
               <div class="featured-car-card">
 
                 <figure class="card-banner">
-                  <img src="./assets/images/bolero.png" alt="Mahindra Bolero Neo" loading="lazy" width="440" height="300"
+                  <img src="{% static 'images/bolero.png' %}" alt="Mahindra Bolero Neo" loading="lazy" width="440" height="300"
                     class="w-100">
                 </figure>
 
@@ -287,7 +201,7 @@
               <div class="featured-car-card">
 
                 <figure class="card-banner">
-                  <img src="./assets/images/mahindraThar.jpg" alt="Mahindra Thar" loading="lazy" width="440" height="300"
+                  <img src="{% static 'images/mahindraThar.jpg' %}" alt="Mahindra Thar" loading="lazy" width="440" height="300"
                     class="w-100">
                 </figure>
 
@@ -437,7 +351,7 @@
               <div class="reviews-card">
 
                 <figure class="card-banner">
-                    <img src="./assets/images/akshay-review.jpeg" alt="top review" loading="lazy"
+                    <img src="{% static 'images/akshay-review.jpeg' %}" alt="top review" loading="lazy"
                       class="w-100">
               
                   <a class="btn card-badge">6-People(SUV)</a>
@@ -477,7 +391,7 @@
               <div class="reviews-card">
 
                 <figure class="card-banner">
-                    <img src="./assets/images/hrithik-review.jpg" alt="top review" loading="lazy"
+                    <img src="{% static 'images/hrithik-review.jpg' %}" alt="top review" loading="lazy"
                       class="w-100">
               
                   <a class="btn card-badge">SUV</a>
@@ -517,7 +431,7 @@
               <div class="reviews-card">
 
                 <figure class="card-banner">
-                    <img src="./assets/images/rajpal-review.jpg" alt="top review" loading="lazy"
+                    <img src="{% static 'images/rajpal-review.jpg' %}" alt="top review" loading="lazy"
                       class="w-100">
               
                   <a class="btn card-badge">SUV</a>
@@ -557,7 +471,7 @@
               <div class="reviews-card">
 
                 <figure class="card-banner">
-                    <img src="./assets/images/uday-review.jpg" alt="top review" loading="lazy"
+                    <img src="{% static 'images/uday-review.jpg' %}" alt="top review" loading="lazy"
                       class="w-100">
               
                   <a class="btn card-badge">SUV</a>
@@ -597,7 +511,7 @@
               <div class="reviews-card">
 
                 <figure class="card-banner">
-                    <img src="./assets/images/old-review.jpg" alt="top review" loading="lazy"
+                    <img src="{% static 'images/old-review.jpg' %}" alt="top review" loading="lazy"
                       class="w-100">
               
                   <a class="btn card-badge">SUV</a>
@@ -653,7 +567,7 @@
 
         <div class="footer-brand">
           <a href="#" class="logo">
-            <img src="./assets/images/carpool-connect-logo.png" height="200" alt="Ridex logo">
+            <img src="{% static 'images/carpool-connect-logo.png' %}" height="200" alt="Ridex logo">
           </a>
 
           <p class="footer-text">
@@ -789,18 +703,10 @@
 
     </div>
   </footer>
-
+  {% endblock content %}
   <!-- 
     - custom js link
   -->
-  <script src="./assets/scripts/script.js"></script>
-
-  <!-- 
-    - ionicon link
-  -->
-  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-
-</body>
-
-</html>
+  {% block footer %}
+  <script src="{% static 'script/script.js' %}"></script>
+  {% endblock footer %}

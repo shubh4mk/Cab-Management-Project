@@ -1,63 +1,55 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us</title>
+{% extends 'base.html' %}
+  {% load static %}
+  {%block extrahead %}
+  <link rel="stylesheet" href="{% static 'css/aboutUsStyle.css' %}">
+  {% endblock extrahead %}
+    
+{% block content %}
+  <div class="about-section">
+    <h1>About Us Page</h1>
+    <p>ASFRGDSYETRSTUYRX</p>
+    <p>aSDFGHJKL;CVBXCMBVCVBCVBCHTFDRTYCFRFDYICRUYFCTFUYTRFK6UYDYT</p>
+  </div>
+        
+  <h2 style="text-align:center">Our Team</h2>
+  <div class="row">
+    <div class="column">
+      <div class="card">
+        <img src="/w3images/team1.jpg" alt="shubham" style="width:100%">
+        <div class="container">
+          <h2>Shubham Kumar</h2>
+          <p class="title">Student@Christ University</p>
+          <p>Persuing Msc. Data Science at Chrsit Deemed To Be University</p>
+          <p>shubham.kumar@christuniversity.in</p>
+          <p><button class="button">Contact</button></p>
+        </div>
+      </div>
+    </div>
 
-    <!--
-      Favicion
-    -->
-    <link rel="icon" type="image/x-icon" href="./asset/images/favicion-image.png">
-    <link rel="stylesheet" href="./asset/css/aboutUsStyle.css">
-</head>
-<body>
-    <div class="about-section">
-        <h1>About Us Page</h1>
-        <p>ASFRGDSYETRSTUYRX</p>
-        <p>aSDFGHJKL;CVBXCMBVCVBCVBCHTFDRTYCFRFDYICRUYFCTFUYTRFK6UYDYT</p>
-      </div>
-      
-      <h2 style="text-align:center">Our Team</h2>
-      <div class="row">
-        <div class="column">
-          <div class="card">
-            <img src="/w3images/team1.jpg" alt="shubham" style="width:100%">
-            <div class="container">
-              <h2>Shubham Kumar</h2>
-              <p class="title">Student@Christ University</p>
-              <p>Persuing Msc. Data Science at Chrsit Deemed To Be University</p>
-              <p>shubham.kumar@christuniversity.in</p>
-              <p><button class="button">Contact</button></p>
-            </div>
-          </div>
-        </div>
-      
-        <div class="column">
-          <div class="card">
-            <img src="/w3images/team2.jpg" alt="anbhu" style="width:100%">
-            <div class="container">
-              <h2>Thamizhanbu E</h2>
-              <p class="title">Student@Christ University</p>
-              <p>Persuing Msc. Data Science at Chrsit Deemed To Be University</p>
-              <p>@christuniversity.in</p>
-              <p><button class="button">Contact</button></p>
-            </div>
-          </div>
-        </div>
-      
-        <div class="column">
-          <div class="card">
-            <img src="/w3images/team3.jpg" alt="trikka" style="width:100%">
-            <div class="container">
-              <h2>Trikalagga Saha</h2>
-              <p class="title">Student@Christ University</p>
-              <p>Persuing Msc. Data Science at Chrsit Deemed To Be University</p>
-              <p>@christuniversity.in</p>
-              <p><button class="button">Contact</button></p>
-            </div>
-          </div>
+    <div class="column">
+      <div class="card">
+        <img src="/w3images/team2.jpg" alt="anbhu" style="width:100%">
+        <div class="container">
+          <h2>Thamizhanbu E</h2>
+          <p class="title">Student@Christ University</p>
+          <p>Persuing Msc. Data Science at Chrsit Deemed To Be University</p>
+          <p>@christuniversity.in</p>
+          <p><button class="button">Contact</button></p>
         </div>
       </div>
-</body>
-</html>
+    </div>
+
+    <div class="column">
+      <div class="card">
+        <img src="/w3images/team3.jpg" alt="trikka" style="width:100%">
+        <div class="container">
+          <h2>Trikalagga Saha</h2>
+          <p class="title">Student@Christ University</p>
+          <p>Persuing Msc. Data Science at Chrsit Deemed To Be University</p>
+          <p>@christuniversity.in</p>
+          <p><button class="button">Contact</button></p>
+        </div>
+      </div>
+    </div>
+  </div>  
+{% endblock content %}
