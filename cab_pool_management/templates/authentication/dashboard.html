@@ -1,14 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    {% if user.is_authenticated %}
-    <h3>Hello {{ fname }} </h3>
-    <h4>You're sucessfully logged in</h4>
-    
-</body>
-</html>
+{% if user.is_authenticated %}
+    <h3>Hello {{ user.first_name }} </h3>
+    <h4>You're successfully logged in</h4>   
+{% endif %}

@@ -77,13 +77,13 @@
     <h1>Login</h1>
 
     <div class="container">
-        <form action="/login" method="post">
+        <form action="/signin" method="post">
         {% csrf_token %}
             <label for="username">Username</label>
-            <input type="text" id="username" placeholder="Enter your username" required>
+            <input type="text" id="username" name="username" placeholder="Enter your username" required>
     
             <label for="password">Password</label>
-            <input type="password" id="password" placeholder="Enter your password" required>
+            <input type="password" id="password" name="pass1" placeholder="Enter your password" required>
     
             <button type="submit">Login</button>
         </form>
