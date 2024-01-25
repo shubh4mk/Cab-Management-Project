@@ -28,7 +28,7 @@
 
         .container {
             display: flex;
-            justify-content: center; /* Center the container horizontally */
+            flex-direction: column;
             align-items: center; /* Center the container vertically */
             height: 100vh; /* Make the container take the full height of the viewport */
         }
@@ -39,7 +39,7 @@
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             width: 300px;
-            margin: 0 auto; /* Center the form horizontally within the container */
+            margin-bottom: 20px; /* Add margin below the form */
         }
 
         label {
@@ -71,6 +71,21 @@
         button:hover {
             background-color: #45a049;
         }
+
+        /* Styles for the login link */
+        .login-link {
+            text-align: center;
+        }
+
+        .login-link a {
+            color: #333;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        .login-link a:hover {
+            color: #555;
+        }
     </style>
 </head>
 <body>
@@ -98,6 +113,11 @@
     
             <button type="submit">Sign Up</button>
         </form>
+
+        <!-- Login link section -->
+        <div class="login-link">
+            <p>Already a member? <a href="/login">Click here to log in</a></p>
+        </div>
     </div>
 </body>
 </html>
