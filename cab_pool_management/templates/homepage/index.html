@@ -1,712 +1,671 @@
-{% extends 'base.html' %}
-{% load static %}
-
-{% block extrahead %}
-<link rel="stylesheet" href="{% static 'css/style.css' %}">
-{% endblock extrahead %}
-
-{% block content %}
-  <main>  
-    <article>
-
-      <!-- 
+{% extends 'base.html' %} {% load static %} {% block extrahead %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}" />
+{% endblock extrahead %} {% block content %}
+<main>
+  <article>
+    <!-- 
         - #HERO
       -->
 
-      <section class="section hero" id="home">
-        <div class="container">
+    <section class="section hero" id="home">
+      <div class="container">
+        <div class="hero-content">
+          <h2 class="h1 hero-title">You bring the jokes, We bring the ride</h2>
 
-          <div class="hero-content">
-            <h2 class="h1 hero-title">You bring the jokes, We bring the ride</h2>
+          <p class="hero-text">We connect Lavasa and Pune</p>
+        </div>
 
-            <p class="hero-text">
-              We connect Lavasa and Pune
-            </p>
+        <div class="hero-banner"></div>
+
+        <form action="" class="hero-form">
+          <div class="input-wrapper">
+            <label for="input-1" class="input-label">Car Type</label>
+
+            <input
+              type="text"
+              name="car-model"
+              id="input-1"
+              class="input-field"
+              placeholder="What car are you looking?"
+            />
           </div>
 
-          <div class="hero-banner"></div>
+          <div class="input-wrapper">
+            <label for="input-2" class="input-label">Amout</label>
 
-          <form action="" class="hero-form">
+            <input
+              type="text"
+              name="monthly-pay"
+              id="input-2"
+              class="input-field"
+              placeholder="Add an amount in ₹"
+            />
+          </div>
 
-            <div class="input-wrapper">
-              <label for="input-1" class="input-label">Car Type</label>
+          <div class="input-wrapper">
+            <label for="input-3" class="input-label">Pick-Up</label>
 
-              <input type="text" name="car-model" id="input-1" class="input-field"
-                placeholder="What car are you looking?">
-            </div>
+            <input
+              type="text"
+              name="year"
+              id="input-3"
+              class="input-field"
+              placeholder="Where are you?"
+            />
+          </div>
 
-            <div class="input-wrapper">
-              <label for="input-2" class="input-label">Amout</label>
+          <div class="input-wrapper">
+            <label for="input-3" class="input-label">Destination</label>
 
-              <input type="text" name="monthly-pay" id="input-2" class="input-field" placeholder="Add an amount in ₹">
-            </div>
+            <input
+              type="text"
+              name="year"
+              id="input-3"
+              class="input-field"
+              placeholder="Destination"
+            />
+          </div>
 
-            <div class="input-wrapper">
-              <label for="input-3" class="input-label">Pick-Up</label>
+          <button type="submit" class="btn">Search</button>
+        </form>
+      </div>
+    </section>
 
-              <input type="text" name="year" id="input-3" class="input-field" placeholder="Where are you?">
-            </div>
-
-            <div class="input-wrapper">
-              <label for="input-3" class="input-label">Destination</label>
-
-              <input type="text" name="year" id="input-3" class="input-field" placeholder="Destination">
-            </div>
-
-            <button type="submit" class="btn">Search</button>
-
-          </form>
-
-        </div>
-      </section>
-
-
-      <!-- 
+    <!-- 
         - #FEATURED CAR
       -->
-      <section class="section featured-car" id="featured-car">
-        <div class="container">
+    <section class="section featured-car" id="featured-car">
+      <div class="container">
+        <div class="title-wrapper">
+          <h2 class="h2 section-title">Featured cars</h2>
 
-          <div class="title-wrapper">
-            <h2 class="h2 section-title">Featured cars</h2>
+          <a
+            href="./assets/htmlpages/exploreCars.html"
+            class="featured-car-link"
+          >
+            <span>View more</span>
 
-            <a href="./assets/htmlpages/exploreCars.html" class="featured-car-link">
-              <span>View more</span>
-
-              <ion-icon name="arrow-forward-outline"></ion-icon>
-            </a>
-          </div>
-
-          <ul class="featured-car-list">
-
-            <li>
-              <div class="featured-car-card">
-
-                <figure class="card-banner">
-                  <img src="{% static 'images/Swift.jpg' %}" alt="Maruti Suzuki Swift" loading="lazy" width="440" height="300"
-                    class="w-100">
-                </figure>
-
-                <div class="card-content">
-
-                  <div class="card-title-wrapper">
-                    <h3 class="h3 card-title">
-                      <a href="#">Maruti Suzuki Swift</a>
-                    </h3>
-
-                    <data class="year" value="2021">2022</data>
-                  </div>
-
-                  <ul class="card-list">
-
-                    <li class="card-list-item">
-                      <ion-icon name="people-outline"></ion-icon>
-
-                      <span class="card-item-text">4 People(MINI)</span>
-                    </li>
-
-                    <li class="card-list-item">
-                      <ion-icon name="flash-outline"></ion-icon>
-
-                      <span class="card-item-text">Disel</span>
-                    </li>
-
-                    <li class="card-list-item">
-                      <ion-icon name="speedometer-outline"></ion-icon>
-
-                      <span class="card-item-text">22.56km / 1-litre</span>
-                    </li>
-
-                    <li class="card-list-item">
-                      <ion-icon name="hardware-chip-outline"></ion-icon>
-
-                      <span class="card-item-text">Automatic</span>
-                    </li>
-
-                  </ul>
-
-                  <div class="card-price-wrapper">
-                    <p class="card-price">
-                      <strong>₹1200</strong>
-                    </p>
-                    <button class="btn">Book Now</button>
-                  </div>
-
-                </div>
-
-              </div>
-
-            </li>
-
-            <li>
-              <div class="featured-car-card">
-
-                <figure class="card-banner">
-                  <img src="{% static 'images/bolero.png' %}" alt="Mahindra Bolero Neo" loading="lazy" width="440" height="300"
-                    class="w-100">
-                </figure>
-
-                <div class="card-content">
-
-                  <div class="card-title-wrapper">
-                    <h3 class="h3 card-title">
-                      <a href="#">Mahindra Bolero Neo</a>
-                    </h3>
-
-                    <data class="year" value="2021">2023</data>
-                  </div>
-
-                  <ul class="card-list">
-
-                    <li class="card-list-item">
-                      <ion-icon name="people-outline"></ion-icon>
-
-                      <span class="card-item-text">6 People(SUV)</span>
-                    </li>
-
-                    <li class="card-list-item">
-                      <ion-icon name="flash-outline"></ion-icon>
-
-                      <span class="card-item-text">Disel</span>
-                    </li>
-
-                    <li class="card-list-item">
-                      <ion-icon name="speedometer-outline"></ion-icon>
-
-                      <span class="card-item-text">17.2km / 1-litre</span>
-                    </li>
-
-                    <li class="card-list-item">
-                      <ion-icon name="hardware-chip-outline"></ion-icon>
-
-                      <span class="card-item-text">Manual</span>
-                    </li>
-
-                  </ul>
-
-                  <div class="card-price-wrapper">
-                    <p class="card-price">
-                      <strong>₹1800</strong>
-                    </p>
-                    <button class="btn">Book Now</button>
-                  </div>
-
-                </div>
-
-              </div>
-              
-            </li>
-
-            <li>
-              <div class="featured-car-card">
-
-                <figure class="card-banner">
-                  <img src="{% static 'images/mahindraThar.jpg' %}" alt="Mahindra Thar" loading="lazy" width="440" height="300"
-                    class="w-100">
-                </figure>
-
-                <div class="card-content">
-
-                  <div class="card-title-wrapper">
-                    <h3 class="h3 card-title">
-                      <a href="#">Mahindra Thar</a>
-                    </h3>
-
-                    <data class="year" value="2021">2022</data>
-                  </div>
-
-                  <ul class="card-list">
-
-                    <li class="card-list-item">
-                      <ion-icon name="people-outline"></ion-icon>
-
-                      <span class="card-item-text">4 People (4x4)</span>
-                    </li>
-
-                    <li class="card-list-item">
-                      <ion-icon name="flash-outline"></ion-icon>
-
-                      <span class="card-item-text">Disel</span>
-                    </li>
-
-                    <li class="card-list-item">
-                      <ion-icon name="speedometer-outline"></ion-icon>
-
-                      <span class="card-item-text">16km / 1-litre</span>
-                    </li>
-
-                    <li class="card-list-item">
-                      <ion-icon name="hardware-chip-outline"></ion-icon>
-
-                      <span class="card-item-text">Automatic</span>
-                    </li>
-
-                  </ul>
-
-                  <div class="card-price-wrapper">
-                    <p class="card-price">
-                      <strong>₹1400</strong>
-                    </p>
-                    <button class="btn">Book Now</button>
-                  </div>
-
-                </div>
-
-              </div>
-              
-            </li>
-
-          </ul>
-
+            <ion-icon name="arrow-forward-outline"></ion-icon>
+          </a>
         </div>
-      </section>
 
-      
-      <!-- 
+        <ul class="featured-car-list">
+          <li>
+            <div class="featured-car-card">
+              <figure class="card-banner">
+                <img
+                  src="{% static 'images/Swift.jpg' %}"
+                  alt="Maruti Suzuki Swift"
+                  loading="lazy"
+                  width="440"
+                  height="300"
+                  class="w-100"
+                />
+              </figure>
+
+              <div class="card-content">
+                <div class="card-title-wrapper">
+                  <h3 class="h3 card-title">
+                    <a href="#">Maruti Suzuki Swift</a>
+                  </h3>
+
+                  <data class="year" value="2021">2022</data>
+                </div>
+
+                <ul class="card-list">
+                  <li class="card-list-item">
+                    <ion-icon name="people-outline"></ion-icon>
+
+                    <span class="card-item-text">4 People(MINI)</span>
+                  </li>
+
+                  <li class="card-list-item">
+                    <ion-icon name="flash-outline"></ion-icon>
+
+                    <span class="card-item-text">Disel</span>
+                  </li>
+
+                  <li class="card-list-item">
+                    <ion-icon name="speedometer-outline"></ion-icon>
+
+                    <span class="card-item-text">22.56km / 1-litre</span>
+                  </li>
+
+                  <li class="card-list-item">
+                    <ion-icon name="hardware-chip-outline"></ion-icon>
+
+                    <span class="card-item-text">Automatic</span>
+                  </li>
+                </ul>
+
+                <div class="card-price-wrapper">
+                  <p class="card-price">
+                    <strong>₹1200</strong>
+                  </p>
+                  <button class="btn">Book Now</button>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <li>
+            <div class="featured-car-card">
+              <figure class="card-banner">
+                <img
+                  src="{% static 'images/bolero.png' %}"
+                  alt="Mahindra Bolero Neo"
+                  loading="lazy"
+                  width="440"
+                  height="300"
+                  class="w-100"
+                />
+              </figure>
+
+              <div class="card-content">
+                <div class="card-title-wrapper">
+                  <h3 class="h3 card-title">
+                    <a href="#">Mahindra Bolero Neo</a>
+                  </h3>
+
+                  <data class="year" value="2021">2023</data>
+                </div>
+
+                <ul class="card-list">
+                  <li class="card-list-item">
+                    <ion-icon name="people-outline"></ion-icon>
+
+                    <span class="card-item-text">6 People(SUV)</span>
+                  </li>
+
+                  <li class="card-list-item">
+                    <ion-icon name="flash-outline"></ion-icon>
+
+                    <span class="card-item-text">Disel</span>
+                  </li>
+
+                  <li class="card-list-item">
+                    <ion-icon name="speedometer-outline"></ion-icon>
+
+                    <span class="card-item-text">17.2km / 1-litre</span>
+                  </li>
+
+                  <li class="card-list-item">
+                    <ion-icon name="hardware-chip-outline"></ion-icon>
+
+                    <span class="card-item-text">Manual</span>
+                  </li>
+                </ul>
+
+                <div class="card-price-wrapper">
+                  <p class="card-price">
+                    <strong>₹1800</strong>
+                  </p>
+                  <button class="btn">Book Now</button>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <li>
+            <div class="featured-car-card">
+              <figure class="card-banner">
+                <img
+                  src="{% static 'images/mahindraThar.jpg' %}"
+                  alt="Mahindra Thar"
+                  loading="lazy"
+                  width="440"
+                  height="300"
+                  class="w-100"
+                />
+              </figure>
+
+              <div class="card-content">
+                <div class="card-title-wrapper">
+                  <h3 class="h3 card-title">
+                    <a href="#">Mahindra Thar</a>
+                  </h3>
+
+                  <data class="year" value="2021">2022</data>
+                </div>
+
+                <ul class="card-list">
+                  <li class="card-list-item">
+                    <ion-icon name="people-outline"></ion-icon>
+
+                    <span class="card-item-text">4 People (4x4)</span>
+                  </li>
+
+                  <li class="card-list-item">
+                    <ion-icon name="flash-outline"></ion-icon>
+
+                    <span class="card-item-text">Disel</span>
+                  </li>
+
+                  <li class="card-list-item">
+                    <ion-icon name="speedometer-outline"></ion-icon>
+
+                    <span class="card-item-text">16km / 1-litre</span>
+                  </li>
+
+                  <li class="card-list-item">
+                    <ion-icon name="hardware-chip-outline"></ion-icon>
+
+                    <span class="card-item-text">Automatic</span>
+                  </li>
+                </ul>
+
+                <div class="card-price-wrapper">
+                  <p class="card-price">
+                    <strong>₹1400</strong>
+                  </p>
+                  <button class="btn">Book Now</button>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 
            Steps
       -->
 
-      <section class="section get-start">
-        <div class="container">
+    <section class="section get-start">
+      <div class="container">
+        <h2 class="h2 section-title">
+          Get yourself a ride with 4 simple steps steps
+        </h2>
 
-          <h2 class="h2 section-title">Get yourself a ride with 4 simple steps steps</h2>
-
-          <ul class="get-start-list">
-
-            <li>
-              <div class="get-start-card">
-
-                <div class="card-icon icon-1">
-                  <ion-icon name="person-add-outline"></ion-icon>
-                </div>
-
-                <h3 class="card-title">Create a profile</h3>
-
-                <p class="card-text">
-                  Create a account with few simple steps.
-                </p>
-
-                <a href="#" class="card-link">Get started</a>
-
+        <ul class="get-start-list">
+          <li>
+            <div class="get-start-card">
+              <div class="card-icon icon-1">
+                <ion-icon name="person-add-outline"></ion-icon>
               </div>
-            </li>
 
-            <li>
-              <div class="get-start-card">
-                <div class="card-icon icon-2">
-                  <ion-icon name="car-outline"></ion-icon>
-                </div>
-                <h3 class="card-title">Tell us what car you want</h3>
-                <p class="card-text">
-                  Get what you want, play for your seat. Meet new people.ENJOY!!
-                </p>
+              <h3 class="card-title">Create a profile</h3>
+
+              <p class="card-text">Create a account with few simple steps.</p>
+
+              <a href="#" class="card-link">Get started</a>
+            </div>
+          </li>
+
+          <li>
+            <div class="get-start-card">
+              <div class="card-icon icon-2">
+                <ion-icon name="car-outline"></ion-icon>
               </div>
-            </li>
+              <h3 class="card-title">Tell us what car you want</h3>
+              <p class="card-text">
+                Get what you want, play for your seat. Meet new people.ENJOY!!
+              </p>
+            </div>
+          </li>
 
-            <li>
-              <div class="get-start-card">
-                <div class="card-icon icon-3">
-                  <ion-icon name="person-outline"></ion-icon>
-                </div>
-                <h3 class="card-title">Match with driver</h3>
-                <p class="card-text">
-                  IExperienced and lisenced drivers from lavasa as well as pune. 
-                </p>
+          <li>
+            <div class="get-start-card">
+              <div class="card-icon icon-3">
+                <ion-icon name="person-outline"></ion-icon>
               </div>
-            </li>
+              <h3 class="card-title">Match with driver</h3>
+              <p class="card-text">
+                IExperienced and lisenced drivers from lavasa as well as pune.
+              </p>
+            </div>
+          </li>
 
-            <li>
-              <div class="get-start-card">
-
-                <div class="card-icon icon-4">
-                  <ion-icon name="card-outline"></ion-icon>
-                </div>
-
-                <h3 class="card-title">Make a deal</h3>
-
-                <p class="card-text">
-                  You offer the price, friendly negoatiation good for both you and us.
-                </p>
-
+          <li>
+            <div class="get-start-card">
+              <div class="card-icon icon-4">
+                <ion-icon name="card-outline"></ion-icon>
               </div>
-            </li>
 
-          </ul>
+              <h3 class="card-title">Make a deal</h3>
 
-        </div>
-      </section>
+              <p class="card-text">
+                You offer the price, friendly negoatiation good for both you and
+                us.
+              </p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
 
-      <!-- 
+    <!-- 
         - #reviews
       -->
 
-      <section class="section reviews" id="reviews">
-        <div class="container">
+    <section class="section reviews" id="reviews">
+      <div class="container">
+        <h2 class="h2 section-title">Top reviews</h2>
 
-          <h2 class="h2 section-title">Top reviews</h2>
+        <ul class="reviews-list has-scrollbar">
+          <li>
+            <div class="reviews-card">
+              <figure class="card-banner">
+                <img
+                  src="{% static 'images/akshay-review.jpeg' %}"
+                  alt="top review"
+                  loading="lazy"
+                  class="w-100"
+                />
 
-          <ul class="reviews-list has-scrollbar">
+                <a class="btn card-badge">6-People(SUV)</a>
+              </figure>
 
-            <li>
-              <div class="reviews-card">
+              <div class="card-content">
+                <h3 class="h3 card-title">Awesome Ride</h3>
 
-                <figure class="card-banner">
-                    <img src="{% static 'images/akshay-review.jpeg' %}" alt="top review" loading="lazy"
-                      class="w-100">
-              
-                  <a class="btn card-badge">6-People(SUV)</a>
+                <div class="card-meta">
+                  <div class="publish-date">
+                    <ion-icon name="time-outline"></ion-icon>
 
-                </figure>
-
-                <div class="card-content">
-
-                  <h3 class="h3 card-title">
-                    Awesome Ride
-                  </h3>
-
-                  <div class="card-meta">
-
-                    <div class="publish-date">
-                      <ion-icon name="time-outline"></ion-icon>
-
-                      <time datetime="2022-01-14">January 14, 2022</time>
-                    </div>
-
-                    <div class="comments">
-                      <ion-icon name="thumbs-up-outline"></ion-icon>
-                      <data value="114">114</data>
-
-                      <ion-icon name="thumbs-down-outline"></ion-icon>
-                      <data value="114">2</data>
-                    </div>
-
+                    <time datetime="2022-01-14">January 14, 2022</time>
                   </div>
 
+                  <div class="comments">
+                    <ion-icon name="thumbs-up-outline"></ion-icon>
+                    <data value="114">114</data>
+
+                    <ion-icon name="thumbs-down-outline"></ion-icon>
+                    <data value="114">2</data>
+                  </div>
                 </div>
-
               </div>
-            </li>
+            </div>
+          </li>
 
-            <li>
-              <div class="reviews-card">
+          <li>
+            <div class="reviews-card">
+              <figure class="card-banner">
+                <img
+                  src="{% static 'images/hrithik-review.jpg' %}"
+                  alt="top review"
+                  loading="lazy"
+                  class="w-100"
+                />
 
-                <figure class="card-banner">
-                    <img src="{% static 'images/hrithik-review.jpg' %}" alt="top review" loading="lazy"
-                      class="w-100">
-              
-                  <a class="btn card-badge">SUV</a>
+                <a class="btn card-badge">SUV</a>
+              </figure>
 
-                </figure>
+              <div class="card-content">
+                <h3 class="h3 card-title">Awesome Ride</h3>
 
-                <div class="card-content">
+                <div class="card-meta">
+                  <div class="publish-date">
+                    <ion-icon name="time-outline"></ion-icon>
 
-                  <h3 class="h3 card-title">
-                    Awesome Ride
-                  </h3>
-
-                  <div class="card-meta">
-
-                    <div class="publish-date">
-                      <ion-icon name="time-outline"></ion-icon>
-
-                      <time datetime="2022-01-14">January 14, 2022</time>
-                    </div>
-
-                    <div class="comments">
-                      <ion-icon name="thumbs-up-outline"></ion-icon>
-                      <data value="114">114</data>
-
-                      <ion-icon name="thumbs-down-outline"></ion-icon>
-                      <data value="114">2</data>
-                    </div>
-
+                    <time datetime="2022-01-14">January 14, 2022</time>
                   </div>
 
+                  <div class="comments">
+                    <ion-icon name="thumbs-up-outline"></ion-icon>
+                    <data value="114">114</data>
+
+                    <ion-icon name="thumbs-down-outline"></ion-icon>
+                    <data value="114">2</data>
+                  </div>
                 </div>
-
               </div>
-            </li>
+            </div>
+          </li>
 
-            <li>
-              <div class="reviews-card">
+          <li>
+            <div class="reviews-card">
+              <figure class="card-banner">
+                <img
+                  src="{% static 'images/rajpal-review.jpg' %}"
+                  alt="top review"
+                  loading="lazy"
+                  class="w-100"
+                />
 
-                <figure class="card-banner">
-                    <img src="{% static 'images/rajpal-review.jpg' %}" alt="top review" loading="lazy"
-                      class="w-100">
-              
-                  <a class="btn card-badge">SUV</a>
+                <a class="btn card-badge">SUV</a>
+              </figure>
 
-                </figure>
+              <div class="card-content">
+                <h3 class="h3 card-title">Awesome Ride</h3>
 
-                <div class="card-content">
+                <div class="card-meta">
+                  <div class="publish-date">
+                    <ion-icon name="time-outline"></ion-icon>
 
-                  <h3 class="h3 card-title">
-                    Awesome Ride
-                  </h3>
-
-                  <div class="card-meta">
-
-                    <div class="publish-date">
-                      <ion-icon name="time-outline"></ion-icon>
-
-                      <time datetime="2022-01-14">January 14, 2022</time>
-                    </div>
-
-                    <div class="comments">
-                      <ion-icon name="thumbs-up-outline"></ion-icon>
-                      <data value="114">114</data>
-
-                      <ion-icon name="thumbs-down-outline"></ion-icon>
-                      <data value="114">2</data>
-                    </div>
-
+                    <time datetime="2022-01-14">January 14, 2022</time>
                   </div>
 
+                  <div class="comments">
+                    <ion-icon name="thumbs-up-outline"></ion-icon>
+                    <data value="114">114</data>
+
+                    <ion-icon name="thumbs-down-outline"></ion-icon>
+                    <data value="114">2</data>
+                  </div>
                 </div>
-
               </div>
-            </li>
+            </div>
+          </li>
 
-            <li>
-              <div class="reviews-card">
+          <li>
+            <div class="reviews-card">
+              <figure class="card-banner">
+                <img
+                  src="{% static 'images/uday-review.jpg' %}"
+                  alt="top review"
+                  loading="lazy"
+                  class="w-100"
+                />
 
-                <figure class="card-banner">
-                    <img src="{% static 'images/uday-review.jpg' %}" alt="top review" loading="lazy"
-                      class="w-100">
-              
-                  <a class="btn card-badge">SUV</a>
+                <a class="btn card-badge">SUV</a>
+              </figure>
 
-                </figure>
+              <div class="card-content">
+                <h3 class="h3 card-title">Awesome Ride</h3>
 
-                <div class="card-content">
+                <div class="card-meta">
+                  <div class="publish-date">
+                    <ion-icon name="time-outline"></ion-icon>
 
-                  <h3 class="h3 card-title">
-                    Awesome Ride
-                  </h3>
-
-                  <div class="card-meta">
-
-                    <div class="publish-date">
-                      <ion-icon name="time-outline"></ion-icon>
-
-                      <time datetime="2022-01-14">January 14, 2022</time>
-                    </div>
-
-                    <div class="comments">
-                      <ion-icon name="thumbs-up-outline"></ion-icon>
-                      <data value="114">114</data>
-
-                      <ion-icon name="thumbs-down-outline"></ion-icon>
-                      <data value="114">2</data>
-                    </div>
-
+                    <time datetime="2022-01-14">January 14, 2022</time>
                   </div>
 
+                  <div class="comments">
+                    <ion-icon name="thumbs-up-outline"></ion-icon>
+                    <data value="114">114</data>
+
+                    <ion-icon name="thumbs-down-outline"></ion-icon>
+                    <data value="114">2</data>
+                  </div>
                 </div>
-
               </div>
-            </li>
+            </div>
+          </li>
 
-            <li>
-              <div class="reviews-card">
+          <li>
+            <div class="reviews-card">
+              <figure class="card-banner">
+                <img
+                  src="{% static 'images/old-review.jpg' %}"
+                  alt="top review"
+                  loading="lazy"
+                  class="w-100"
+                />
 
-                <figure class="card-banner">
-                    <img src="{% static 'images/old-review.jpg' %}" alt="top review" loading="lazy"
-                      class="w-100">
-              
-                  <a class="btn card-badge">SUV</a>
+                <a class="btn card-badge">SUV</a>
+              </figure>
 
-                </figure>
+              <div class="card-content">
+                <h3 class="h3 card-title">Awesome Ride</h3>
 
-                <div class="card-content">
+                <div class="card-meta">
+                  <div class="publish-date">
+                    <ion-icon name="time-outline"></ion-icon>
 
-                  <h3 class="h3 card-title">
-                    Awesome Ride
-                  </h3>
-
-                  <div class="card-meta">
-
-                    <div class="publish-date">
-                      <ion-icon name="time-outline"></ion-icon>
-
-                      <time datetime="2022-01-14">January 14, 2022</time>
-                    </div>
-
-                    <div class="comments">
-                      <ion-icon name="thumbs-up-outline"></ion-icon>
-                      <data value="114">114</data>
-
-                      <ion-icon name="thumbs-down-outline"></ion-icon>
-                      <data value="114">2</data>
-                    </div>
-
+                    <time datetime="2022-01-14">January 14, 2022</time>
                   </div>
 
+                  <div class="comments">
+                    <ion-icon name="thumbs-up-outline"></ion-icon>
+                    <data value="114">114</data>
+
+                    <ion-icon name="thumbs-down-outline"></ion-icon>
+                    <data value="114">2</data>
+                  </div>
                 </div>
-
               </div>
-            </li>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </article>
+</main>
 
-            
-          </ul>
-
-        </div>
-      </section>
-      
-    </article>
-  </main>
-
-  <!-- 
+<!-- 
     - #FOOTER
   -->
 
-  <footer class="footer">
-    <div class="container">
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="#" class="logo">
+          <img
+            src="{% static 'images/carpool-connect-logo.png' %}"
+            height="200"
+            alt="Ridex logo"
+          />
+        </a>
 
-      <div class="footer-top">
+        <p class="footer-text">
+          Most affordable ride for the students of Christ University and locals
+          of Lavasa and Pune. Choose from ranges of different types of cars,
+          match with amazing co-riders and very experienced, authorized driver.
 
-        <div class="footer-brand">
-          <a href="#" class="logo">
-            <img src="{% static 'images/carpool-connect-logo.png' %}" height="200" alt="Ridex logo">
-          </a>
-
-          <p class="footer-text">
-            Most affordable ride for the students of Christ University and locals of Lavasa and Pune.
-            
-            Choose from ranges of different types of cars, match with amazing co-riders and very experienced, authorized driver.
-            
-            <strong>You tell the fare.</strong>
-          </p>
-        </div>
-
-        <ul class="footer-list">
-
-          <li>
-            <p class="footer-list-title">Company</p>
-          </li>
-
-          <li>
-            <a href="./assets/htmlpages/aboutUs.html" class="footer-link">About us</a>
-          </li>
-
-          <li>
-            <a href="#" class="footer-link">Drivers</a>
-          </li>
-
-          <li>
-            <a href="#" class="footer-link">Contacts</a>
-          </li>
-
-        </ul>
-
-        <ul class="footer-list">
-
-          <li>
-            <p class="footer-list-title">Support</p>
-          </li>
-
-          <li>
-            <a href="#" class="footer-link">Help center</a>
-          </li>
-
-          <li>
-            <a href="#" class="footer-link">Ask a question</a>
-          </li>
-
-          <li>
-            <a href="#" class="footer-link">Terms & conditions</a>
-          </li>
-
-        </ul>
-
-        <ul class="footer-list">
-
-          <li>
-            <p class="footer-list-title">Destination</p>
-          </li>
-
-          <li>
-            <a class="footer-link">Lavasa</a>
-          </li>
-
-          <li>
-            <a class="footer-link">Pune Railway Station</a>
-          </li>
-
-          <li>
-            <a class="footer-link">Pune Airport</a>
-          </li>
-
-          <li>
-            <a class="footer-link">Pheonix Mall, Pune</a>
-          </li>
-
-          <li>
-            <a class="footer-link">Christ College, Pune</a>
-          </li>
-
-          <li>
-            <a class="footer-link">Swargate Bus Stop</a>
-          </li>
-
-        </ul>
-
-      </div>
-
-      <div class="footer-bottom">
-
-        <ul class="social-list">
-
-          <li>
-            <a href="#" class="social-link">
-              <ion-icon name="logo-facebook"></ion-icon>
-            </a>
-          </li>
-
-          <li>
-            <a href="#" class="social-link">
-              <ion-icon name="logo-instagram"></ion-icon>
-            </a>
-          </li>
-
-          <li>
-            <a href="#" class="social-link">
-              <ion-icon name="logo-twitter"></ion-icon>
-            </a>
-          </li>
-
-          <li>
-            <a href="#" class="social-link">
-              <ion-icon name="logo-linkedin"></ion-icon>
-            </a>
-          </li>
-
-          <li>
-            <a href="#" class="social-link">
-              <ion-icon name="logo-skype"></ion-icon>
-            </a>
-          </li>
-
-          <li>
-            <a href="#" class="social-link">
-              <ion-icon name="mail-outline"></ion-icon>
-            </a>
-          </li>
-
-        </ul>
-
-        <p class="copyright">
-          &copy; 2024 CAC Project @ Chirst University. All Rights Reserved
+          <strong>You tell the fare.</strong>
         </p>
-
       </div>
 
+      <ul class="footer-list">
+        <li>
+          <p class="footer-list-title">Company</p>
+        </li>
+
+        <li>
+          <a href="./assets/htmlpages/aboutUs.html" class="footer-link"
+            >About us</a
+          >
+        </li>
+
+        <li>
+          <a href="#" class="footer-link">Drivers</a>
+        </li>
+
+        <li>
+          <a href="#" class="footer-link">Contacts</a>
+        </li>
+      </ul>
+
+      <ul class="footer-list">
+        <li>
+          <p class="footer-list-title">Support</p>
+        </li>
+
+        <li>
+          <a href="#" class="footer-link">Help center</a>
+        </li>
+
+        <li>
+          <a href="#" class="footer-link">Ask a question</a>
+        </li>
+
+        <li>
+          <a href="#" class="footer-link">Terms & conditions</a>
+        </li>
+      </ul>
+
+      <ul class="footer-list">
+        <li>
+          <p class="footer-list-title">Destination</p>
+        </li>
+
+        <li>
+          <a class="footer-link">Lavasa</a>
+        </li>
+
+        <li>
+          <a class="footer-link">Pune Railway Station</a>
+        </li>
+
+        <li>
+          <a class="footer-link">Pune Airport</a>
+        </li>
+
+        <li>
+          <a class="footer-link">Pheonix Mall, Pune</a>
+        </li>
+
+        <li>
+          <a class="footer-link">Christ College, Pune</a>
+        </li>
+
+        <li>
+          <a class="footer-link">Swargate Bus Stop</a>
+        </li>
+      </ul>
     </div>
-  </footer>
-  {% endblock content %}
-  <!-- 
+
+    <div class="footer-bottom">
+      <ul class="social-list">
+        <li>
+          <a href="#" class="social-link">
+            <ion-icon name="logo-facebook"></ion-icon>
+          </a>
+        </li>
+
+        <li>
+          <a href="#" class="social-link">
+            <ion-icon name="logo-instagram"></ion-icon>
+          </a>
+        </li>
+
+        <li>
+          <a href="#" class="social-link">
+            <ion-icon name="logo-twitter"></ion-icon>
+          </a>
+        </li>
+
+        <li>
+          <a href="#" class="social-link">
+            <ion-icon name="logo-linkedin"></ion-icon>
+          </a>
+        </li>
+
+        <li>
+          <a href="#" class="social-link">
+            <ion-icon name="logo-skype"></ion-icon>
+          </a>
+        </li>
+
+        <li>
+          <a href="#" class="social-link">
+            <ion-icon name="mail-outline"></ion-icon>
+          </a>
+        </li>
+      </ul>
+
+      <p class="copyright">
+        &copy; 2024 CAC Project @ Chirst University. All Rights Reserved
+      </p>
+    </div>
+  </div>
+</footer>
+{% endblock content %}
+<!-- 
     - custom js link
   -->
-  {% block footer %}
-  <script src="{% static 'script/script.js' %}"></script>
-  {% endblock footer %}
+{% block footer %}
+<script src="{% static 'script/script.js' %}"></script>
+{% endblock footer %}

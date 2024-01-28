@@ -5,8 +5,11 @@ from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 
 # Create your views here.
+
+
 def home(request):
     return render(request, "homepage/index.html")
+
 
 def signup(request):
 
@@ -17,25 +20,26 @@ def signup(request):
         email = request.POST['email']
         pass1 = request.POST['pass1']
         pass2 = request.POST['pass2']
-
         myuser = User.objects.create_user(username, email, pass1)
         myuser.first_name = fname
         myuser.last_name = lname
 
         myuser.save()
 
-        messages.success(request, "Your account has been successfully created.")
+        messages.success(
+            request, "Your account has been successfully created.")
 
         return redirect('signin')
     return render(request, "authentication/signup.html")
 
+
 def signin(request):
-    
+
     if request.method == "POST":
         username = request.POST['username']
         pass1 = request.POST['pass1']
 
-        user = authenticate (username=username, password=pass1)
+        user = authenticate(username=username, password=pass1)
 
         if user is not None:
             login(request, user)
@@ -45,6 +49,7 @@ def signin(request):
             return redirect('home')
 
     return render(request, "authentication/signin.html")
+
 
 def signout(request):
     logout(request)
