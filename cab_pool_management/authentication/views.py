@@ -43,7 +43,7 @@ def signin(request):
 
         if user is not None:
             login(request, user)
-            return render(request, "authentication/dashboard.html")
+            return render(request, "user_dashboard/userIndex.html")
         else:
             messages.error(request, "Bad Credentials!")
             return redirect('home')

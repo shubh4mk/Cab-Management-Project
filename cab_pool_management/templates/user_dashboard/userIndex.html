@@ -1,11 +1,32 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
-</html>
+{% extends 'base.html' %}
+{% load static %}
+
+{%block extrahead %}
+<link rel="stylesheet" href="{% static 'css/userStyle.css' %}" />
+{% endblock extrahead %}
+
+{% block content %}
+<div id="container">       
+    <div id="sidebar">
+        <img id="profile-img" src="/static/images/personImage.png" alt="Profile Image">
+        <div id="name-section">Shubham Kumar</div>
+        <a href="#" onclick="openContent('dbPage1.html')">Dashboard</a>
+        <a href="#" onclick="openContent('page2.html')">Booking History</a>
+        <a href="#" onclick="openContent('page3.html')">Review</a>
+        <button id="logout" onclick="logout()">Logout</button>
+    </div>
+
+    <div id="content">
+        <iframe id="contentFrame" src="" frameborder="0"></iframe>
+    </div>
+</div>
+
+<script>
+    function openContent(url) {
+        document.getElementById('contentFrame').src = url;
+    }
+</script>
+
+{% endblock content %}
+
+
