@@ -8,6 +8,12 @@
 
 <h1>Login</h1>
 
+    {% if success_message %}
+    <div class="success">
+        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+        <strong>{{ success_message }}</strong>
+      </div>
+    {% endif %}
     <div class="container">
         <form action="/signin" method="post">
         {% csrf_token %}
@@ -20,4 +26,10 @@
             <button type="submit">Login</button>
         </form>
     </div>
+    {% if error_message %}
+        <div class="alert">
+            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+            <strong>{{ error_message }}</strong>
+          </div>
+        {% endif %}
 {% endblock content %}

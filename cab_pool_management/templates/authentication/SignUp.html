@@ -3,6 +3,20 @@
 {% endblock extrahead %} {% block content %}
 <h1>Sign Up</h1>
 
+{% if password_error_message %}
+        <div class="alert">
+            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+            <strong>{{ password_error_message }}</strong>
+          </div>
+        {% endif %}
+
+{% if username_error_message %}
+  <div class="alert">
+      <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+      <strong>{{ username_error_message }}</strong>
+    </div>
+{% endif %}
+
 <div class="signup_container">
   <form action="/signup" method="POST">
     {% csrf_token %}
@@ -13,10 +27,11 @@
       name="username"
       placeholder="Create a Username"
       required
-      pattern="[A-Za-z0-9]{6,}"
+      pattern="[a-z0-9]{6,}"
     />
     <ul>
       <li class="signup-username-condition">Minimum 6 Characters</li>
+      <li class="signup-username-condition">Only Small Case</li>
       <li class="signup-username-condition">Only Letters and Number</li>
     </ul>
     <label for="fname">First Name</label>
