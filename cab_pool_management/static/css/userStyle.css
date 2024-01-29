@@ -64,14 +64,6 @@ header {
     border-bottom-left-radius: 10px;
 }
 
-#clickButtons {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 20px; /* Add margin for spacing */
-}
-
-
 #content {
     flex-grow: 1;
     padding: 20px;
