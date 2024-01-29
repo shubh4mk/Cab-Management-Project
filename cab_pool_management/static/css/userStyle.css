@@ -1,11 +1,11 @@
 body {
+    background-color: #333;
     margin: 0;
     margin-top: 50px;
     font-family: Arial, sans-serif;
     display: flex;
-    /* I did this for aligning the childern in vertical postion*/
-    flex-direction: column; 
-    min-height: 100vh; 
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 header {
@@ -32,7 +32,9 @@ header {
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Center items horizontally in the sidebar */
+    align-items: center;
+    border-top-left-radius: 10px; /* Adding border radius to top-left corner */
+    border-bottom-left-radius: 10px; /* Adding border radius to bottom-left corner */
 }
 
 #profile-img {
@@ -40,7 +42,7 @@ header {
     height: 100px;
     border-radius: 50%;
     margin-bottom: 10px;
-    object-fit: cover; /* Ensure the image maintains its aspect ratio */
+    object-fit: cover;
 }
 
 #name-section {
@@ -48,10 +50,34 @@ header {
     margin-bottom: 10px;
 }
 
+#sidebar {
+    width: 200px;
+    background-color: #FDB813;
+    color: white;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Centering content vertically */
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+#clickButtons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px; /* Add margin for spacing */
+}
+
+
 #content {
     flex-grow: 1;
     padding: 20px;
     box-sizing: border-box;
+    border-top-right-radius: 10px; /* Adding border radius to top-right corner */
+    border-bottom-right-radius: 10px; /* Adding border radius to bottom-right corner */
 }
 
 #content iframe {
