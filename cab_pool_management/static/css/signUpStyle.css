@@ -41,7 +41,7 @@ input {
   border-radius: 4px;
 }
 
-button {
+.signup-button {
   background-color: #4caf50;
   color: #fff;
   padding: 10px;
@@ -52,7 +52,7 @@ button {
   margin: 0 auto; /* Center the button horizontally within the form */
 }
 
-button:hover {
+.signup-button:hover {
   background-color: #45a049;
 }
 
@@ -69,4 +69,9 @@ button:hover {
 
 .login-link a:hover {
   color: #555;
+}
+
+.signup-username-condition {
+font-size: small;
+list-style:circle;
 }

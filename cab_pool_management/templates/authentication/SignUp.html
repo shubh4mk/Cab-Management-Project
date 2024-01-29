@@ -11,10 +11,14 @@
       type="text"
       id="username"
       name="username"
-      placeholder="Create a username (Only letters and numbers)"
+      placeholder="Create a Username"
       required
+      pattern="[A-Za-z0-9]{6,}"
     />
-
+    <ul>
+      <li class="signup-username-condition">Minimum 6 Characters</li>
+      <li class="signup-username-condition">Only Letters and Number</li>
+    </ul>
     <label for="fname">First Name</label>
     <input
       type="text"
@@ -60,7 +64,7 @@
       required
     />
 
-    <button type="submit">Sign Up</button>
+    <button type="submit" class="signup-button">Sign Up</button>
   </form>
 
   <!-- Login link section -->
@@ -68,5 +72,4 @@
 <div class="login-link">
   <p>Already a member? <a href="/signin">Click here to log in</a></p>
 </div>
-
 {% endblock content %}
