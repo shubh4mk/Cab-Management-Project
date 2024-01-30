@@ -1,32 +1,114 @@
-{% extends 'base.html' %}
-{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-{%block extrahead %}
-<link rel="stylesheet" href="{% static 'css/userStyle.css' %}" />
-{% endblock extrahead %}
+    <title>Dashboard</title>
+</head>
+<body>
+    <div class="menu">
+        <ul>
+            <li class="profile">
+                <div class="img-box">
+                    <img src="./profileImage.png" alt="image">
+                </div>
+                <h2>Shubham Kumar</h2>
+            </li>
+            <li>
+                <a href="#" class="active">
+                    <i class="fas fa-home"></i>
+                    <p>Dashboarc</p>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa-solid fa-car"></i>
+                    <p>Previous Ride </p>
+                </a>
+            </li>
+            
 
-{% block content %}
-<div id="container">       
-    <div id="sidebar">
-        <img id="profile-img" src="/static/images/personImage.png" alt="Profile Image">
-        <div id="name-section">{{ user_name }}</div>
-            <a href="#" onclick="openContent('dbPage1.html')">Dashboard</a>
-            <a href="#" onclick="openContent('bookingHistory.html')">Booking History</a>
-            <a href="#" onclick="openContent('userStyle.html')">Review</a>
-        <button id="logout" onclick="logout()">Logout</button>
+            <li>
+                <a href="#">
+                    <i class="fa-solid fa-star"></i>
+                    <p>Reviews</p>
+                </a>
+            </li>
+
+            <li class="log-out">
+                <a href="#">
+                    <i class="fas fa-sign-out"></i>
+                    <p>Log Out</p>
+                </a>
+            </li>
+        </ul>
+
     </div>
 
-    <div id="content">
-        <iframe id="contentFrame" src="" frameborder="0"></iframe>
+
+    <div class="content">
+     <div class="title-info">
+        <p>Dashbord</p>
+        <i class="fas fa-chart-bar"></i>
+     </div>
+     <div class="data-info">
+        <div class="box">
+            <i class="fa-solid fa-car"></i>
+            <div class="data">
+                <p>Total Rides</p>
+                <span>16</span>
+            </div>
+        </div>
+        <div class="box">
+            <i class="fas fa-pen"></i>
+            <div class="data">
+                <p>Reviews</p>
+                <span>15</span>
+            </div>
+        </div>
+        <div class="box">
+            <i class="fa-solid fa-thumbs-up"></i>
+            <div class="data">
+                <p>Likes</p>
+                <span>10</span>
+            </div>
+        </div>
+        <div class="box">
+            <i class="fa-solid fa-thumbs-down"></i>
+            <div class="data">
+                <p>Dislikes</p>
+                <span>2</span>
+            </div>
+        </div>
+        
+     </div>
+     <div class="title-info">
+        <p>Recent Rides</p>
+        <i class="fas fa-table"></i>
+     </div>
+     <table>
+        <thead>
+            <tr>
+                <th>Car</th>
+                <th>Distance</th>
+                <th>Fare</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Swift</td>
+                <td><span class="distance">60 Km</span></td>
+                <td><span class="fare">₹ 30</span></td>
+            </tr>
+            
+        </tbody>
+     </table>
+
     </div>
-</div>
 
-<script>
-    function openContent(url) {
-        document.getElementById('contentFrame').src = url;
-    }
-</script>
-
-{% endblock content %}
-
-
+    
+</body>
+</html>
