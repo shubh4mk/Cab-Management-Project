@@ -140,6 +140,34 @@ body {
   overflow-x: hidden;
 }
 
+/* Add this to your existing style.css or create a new CSS file */
+
+/* Style for the car type dropdown */
+.input-wrapper select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+/* Style for the submit button */
+.hero-form .btn {
+  width: 100%;
+  padding: 10px;
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.hero-form .btn:hover {
+  background-color: #2980b9;
+}
+
 ::-webkit-scrollbar {
   width: 15px;
   height: 10px;
