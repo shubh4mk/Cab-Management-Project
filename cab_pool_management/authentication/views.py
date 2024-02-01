@@ -42,8 +42,8 @@ def signin(request):
 
         if user is not None:
             login(request, user)
-            full_name= f"{user.first_name} {user.last_name}"
-            return render(request, "user_dashboard/userIndex.html",{'user_name':full_name})
+            return redirect('userindex')
+            
         else:
             return render(request,"authentication/signin.html",{'error_message': "Check your Credentials"})
 
