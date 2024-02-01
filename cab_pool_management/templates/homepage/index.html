@@ -18,17 +18,15 @@
         <div class="hero-banner"></div>
 
         <form action="" class="hero-form">
-          <div class="input-wrapper">
-            <label for="input-1" class="input-label">Car Type</label>
 
-            <input
-              type="text"
-              name="car-model"
-              id="input-1"
-              class="input-field"
-              placeholder="What car are you looking?"
-            />
-          </div>
+          <div class="input-wrapper">
+            <label for="ride-type" class="input-label">Ride Type</label>
+            <select id="ride-type" name="ride-type" class="input-field">
+                <option value="sedan">Solo Trip</option>
+                <option value="suv">Pool Trip</option>
+            </select>
+        </div>
+        
 
           <div class="input-wrapper">
             <label for="input-2" class="input-label">Amount</label> 
@@ -44,26 +42,26 @@
 
           <div class="input-wrapper">
             <label for="input-3" class="input-label">Pick-Up</label>
-
-            <input
-              type="text"
-              name="year"
-              id="input-3"
-              class="input-field"
-              placeholder="Where are you?"
-            />
+            <select id="ride-type" name="ride-type" class="input-field">
+                <option value="sedan">Lavasa</option>
+                <option value="suv">Pune Railway Station</option>
+                <option value="sedan">Pune Airport</option>
+                <option value="suv">Pheonix Mall, Pune</option>
+                <option value="sedan">Christ College, Pune</option>
+                <option value="suv">Swargate Bus Stop</option>
+            </select>
           </div>
 
           <div class="input-wrapper">
             <label for="input-3" class="input-label">Destination</label>
-
-            <input
-              type="text"
-              name="year"
-              id="input-3"
-              class="input-field"
-              placeholder="Destination"
-            />
+            <select id="ride-type" name="ride-type" class="input-field">
+              <option value="sedan">Lavasa</option>
+              <option value="suv">Pune Railway Station</option>
+              <option value="sedan">Pune Airport</option>
+              <option value="suv">Pheonix Mall, Pune</option>
+              <option value="sedan">Christ College, Pune</option>
+              <option value="suv">Swargate Bus Stop</option>
+          </select>
           </div>
 
           <button type="submit" class="btn">Search</button>
@@ -74,22 +72,13 @@
     <!-- 
         - #FEATURED CAR
       -->
-    <section class="section featured-car" id="featured-car">
+    <section class="section reviews" id="reviews">
       <div class="container">
         <div class="title-wrapper">
           <h2 class="h2 section-title">Featured cars</h2>
-
-          <a
-            href="./assets/htmlpages/exploreCars.html"
-            class="featured-car-link"
-          >
-            <span>View more</span>
-
-            <ion-icon name="arrow-forward-outline"></ion-icon>
-          </a>
         </div>
 
-        <ul class="featured-car-list">
+        <ul class="reviews-list has-scrollbar">
           <li>
             <div class="featured-car-card">
               <figure class="card-banner">
@@ -128,7 +117,7 @@
                   <li class="card-list-item">
                     <ion-icon name="speedometer-outline"></ion-icon>
 
-                    <span class="card-item-text">22.56km / 1-litre</span>
+                    <span class="card-item-text">22.5km / 1-litre</span>
                   </li>
 
                   <li class="card-list-item">
@@ -263,6 +252,64 @@
               </div>
             </div>
           </li>
+
+          <li>
+            <div class="featured-car-card">
+              <figure class="card-banner">
+                <img
+                  src="{% static 'images/bolero.png' %}"
+                  alt="Mahindra Bolero Neo"
+                  loading="lazy"
+                  width="440"
+                  height="300"
+                  class="w-100"
+                />
+              </figure>
+
+              <div class="card-content">
+                <div class="card-title-wrapper">
+                  <h3 class="h3 card-title">
+                    <a href="#">Mahindra Bolero Neo</a>
+                  </h3>
+
+                  <data class="year" value="2021">2023</data>
+                </div>
+
+                <ul class="card-list">
+                  <li class="card-list-item">
+                    <ion-icon name="people-outline"></ion-icon>
+
+                    <span class="card-item-text">6 People(SUV)</span>
+                  </li>
+
+                  <li class="card-list-item">
+                    <ion-icon name="flash-outline"></ion-icon>
+
+                    <span class="card-item-text">Disel</span>
+                  </li>
+
+                  <li class="card-list-item">
+                    <ion-icon name="speedometer-outline"></ion-icon>
+
+                    <span class="card-item-text">17.2km / 1-litre</span>
+                  </li>
+
+                  <li class="card-list-item">
+                    <ion-icon name="hardware-chip-outline"></ion-icon>
+
+                    <span class="card-item-text">Manual</span>
+                  </li>
+                </ul>
+
+                <div class="card-price-wrapper">
+                  <p class="card-price">
+                    <strong>₹1800</strong>
+                  </p>
+                  <button class="btn">Book Now</button>
+                </div>
+              </div>
+            </div>
+          </li>
         </ul>
       </div>
     </section>
@@ -288,7 +335,7 @@
 
               <p class="card-text">Create an account with few simple steps.</p>
 
-              <a href="#" class="card-link">Get started</a>
+              <a href="/signup" class="card-link">Get started</a>
             </div>
           </li>
 
