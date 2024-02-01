@@ -56,7 +56,7 @@
             </li>
 
             <li>
-              <a href="/aboutUs" class="navbar-link" data-nav-link>About us</a>
+              <a href="{% url 'aboutus' %}" class="navbar-link" data-nav-link>About us</a>
             </li>
 
             <li>
@@ -78,7 +78,7 @@
             <span id="aria-label-txt">Explore cars</span>
           </a>
 
-          <a href="./signup" class="btn user-btn" aria-label="Profile">
+          <a href="{% url 'signup' %}" class="btn user-btn" aria-label="Profile">
             <ion-icon name="person-outline"></ion-icon>
           </a>
 
