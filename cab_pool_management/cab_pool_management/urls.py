@@ -23,4 +23,8 @@ urlpatterns = [
     path('',homepage,name="homepage"),
     path('aboutUs',aboutus,name="aboutus"),
     path('accounts/', include('authentication.urls')),
+    path('', include('user_dashboard.urls')),
+    path('', include('authentication.urls')),
+    path('', include('homepage.urls')),
+
 ]
