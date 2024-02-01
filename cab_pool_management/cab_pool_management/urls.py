@@ -17,14 +17,17 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from homepage.views import homepage,aboutus
+from authentication.views import signin,signout,signup
+from user_dashboard.views import userIndex
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',homepage,name="homepage"),
     path('aboutUs',aboutus,name="aboutus"),
-    path('accounts/', include('authentication.urls')),
-    path('', include('user_dashboard.urls')),
-    path('', include('authentication.urls')),
-    path('', include('homepage.urls')),
-
+    path('signup', signup, name="signup"),
+    path('signin', signin, name="signin"),
+    path('signout',signout, name="signout"),
+    path('userindex',userIndex,name='userindex'),
 ]
+
