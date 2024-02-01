@@ -1,0 +1,76 @@
+/* Table styling */
+.custom-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  /* Table header styling */
+  .custom-table .header-cell {
+    padding: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: #f3f4f6;
+    color: #718096;
+    border: 1px solid #d2d6dc;
+  }
+  
+  /* Table row styling */
+  .custom-table .data-row {
+    background-color: #ffffff;
+  }
+  
+  /* Hover effect on rows */
+  .custom-table .data-row:hover {
+    background-color: #edf2f7;
+  }
+  
+  /* Table cell styling */
+  .custom-table .data-cell {
+    padding: 1rem;
+    text-align: center;
+    border: 1px solid #d2d6dc;
+  }
+  
+  /* Hidden on large screens */
+  .custom-table .header-cell.hidden-lg,
+  .custom-table .data-cell.hidden-lg {
+    display: none;
+  }
+  
+  /* Actions links styling */
+  .custom-table .action-link {
+    color: #4299e1;
+    text-decoration: none;
+  }
+  
+  .custom-table .action-link:hover {
+    color: #3182ce;
+    text-decoration: underline;
+  }
+  
+  /* Status badge styling */
+  .custom-table .status-badge {
+    border-radius: 0.25rem;
+    padding: 0.25rem 0.5rem;
+    font-weight: bold;
+  }
+  
+  .custom-table .deleted {
+    background-color: green;
+    color: #fff;
+  }
+  
+  .custom-table .active {
+    background-color: #68d391;
+    color: #fff;
+  }
+  
+  .custom-table .inactive {
+    background-color: #f6e05e;
+    color: #fff;
+  }
+  
+  /* Icon styling */
+.custom-table .action-link i {
+    margin-right: 5px;
+}
