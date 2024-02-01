@@ -5,4 +5,5 @@ from . import views
 urlpatterns = [
 
     path('userindex',views.userIndex,name='userindex'),
+    path('account/',include('authentication.urls')),
 ]

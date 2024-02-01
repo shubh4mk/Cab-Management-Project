@@ -5,7 +5,8 @@
     font-family: sans-serif;
 }
 body{
-    background-color:#001;
+    margin-top: 70px;
+    background-color:rgb(255, 255, 255);
     display: flex;
 
 }
@@ -32,14 +33,14 @@ body{
 
 .menu{
     background-color: #FDB813;
-    width: 60px;
+    width: 80px;
     height: 100vh;
-    padding: 20px;
+    padding: 10px;
     overflow: hidden;
     transition: 0.5s;
 }
 .menu:hover{
-    width: 260px;
+    width: 400px;
 }
 ul{
     list-style: none;
@@ -67,10 +68,10 @@ ul li a:hover, .active , .box:hover, td:hover{
     width: 100%;
 
 }
-.log-out a{
+.log-out button{
     background-color:#a00 ;
 }
-ul li a i{
+ul li a i {
     font-size: 30px;
 }
 .content{
@@ -95,7 +96,7 @@ ul li a i{
 
 }
 .box{
-    background-color: white;
+    background-color: #1a9df4;
     height: 150px;
     flex-basis: 150px;
     flex-grow: 1;
@@ -123,7 +124,7 @@ table{
 
 }
 th,td{
-    background-color: white;
+    background-color: rgb(240, 240, 240);
     height: 40px;
     border-radius: 8px;
 }
@@ -135,9 +136,13 @@ th{
     border-radius: 6px;
 }
 .distance{
-    background-color: green;
+    background-color: rgb(240, 240, 240);
 }
 .fare{
-    background-color: green;
+    background-color: rgb(240, 240, 240);
     color: black;
+}
+
+ul{
+    padding-left: 0;
 }
