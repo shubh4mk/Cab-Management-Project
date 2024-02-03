@@ -1,148 +1,176 @@
-*{
+* {
     padding: 0;
     margin: 0;
     color: black;
     font-family: sans-serif;
-}
-body{
+  }
+  
+  body {
     margin-top: 70px;
-    background-color:rgb(255, 255, 255);
+    background-color: rgb(255, 255, 255);
     display: flex;
-
-}
-.profile{
+  }
+  
+  .profile {
     display: flex;
     align-items: center;
     gap: 30px;
-}
-.profile h2{
+  }
+  
+  .profile h2 {
     font-size: 20px;
     text-transform: capitalize;
-}
-.img-box{
+  }
+  
+  .img-box {
     width: 50px;
     height: 50px;
     border-radius: 50%;
     overflow: hidden;
     border: 3px solid black;
     flex-shrink: 0;
-}
-.img-box img{
+  }
+  
+  .img-box img {
     width: 100%;
-}
-
-.menu{
-    background-color: #FDB813;
+  }
+  
+  .menu {
+    background-color: #fdb813;
     width: 80px;
     height: 100vh;
     padding: 10px;
     overflow: hidden;
     transition: 0.5s;
-}
-.menu:hover{
-    width: 400px;
-}
-ul{
+  }
+  
+  .menu:hover {
+    width: 200px; /* Adjusted width for better visibility */
+  }
+  
+  ul {
     list-style: none;
     position: relative;
     height: 95%;
-}
-ul li a{
+  }
+  
+  ul li a {
     display: block;
     text-decoration: none;
     padding: 10px;
     margin: 10px 0;
     border-radius: 8px;
     display: flex;
-    gap: 40px;
+    gap: 20px; /* Reduced gap for better spacing */
     align-items: center;
     transition: 0.5s;
-
-}
-ul li a:hover, .active , .box:hover, td:hover{
+  }
+  
+  ul li a:hover,
+  .active,
+  .box:hover,
+  td:hover {
     background-color: #ffffff55;
-}
-.log-out{
+  }
+  
+  .log-out {
     position: absolute;
     bottom: 0;
     width: 100%;
-
-}
-.log-out button{
-    background-color:#a00 ;
-}
-ul li a i {
-    font-size: 30px;
-}
-.content{
+  }
+  
+  .log-out button {
+    background-color: #a00;
+    color: #fff; /* Added text color for better visibility */
+    padding: 10px;
     width: 100%;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  
+  .log-out button:hover {
+    background-color: #700; /* Darker color on hover */
+  }
+  
+  ul li a i {
+    font-size: 20px; /* Adjusted icon size for better proportion */
+  }
+  
+  .content {
+    width: calc(100% - 100px); /* Adjusted width to account for menu width */
     margin: 10px;
-}
-.title-info{
-    background-color: #FDB813;
+  }
+  
+  .title-info {
+    background-color: #fdb813;
     padding: 10px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     border-radius: 8px;
     margin: 10px 0;
-}
-.data-info{
-    display:flex;
+  }
+  
+  .data-info {
+    display: flex;
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
     gap: 10px;
-
-}
-.box{
+  }
+  
+  .box {
     background-color: #1a9df4;
     height: 150px;
-    flex-basis: 150px;
-    flex-grow: 1;
+    flex-basis: calc(33.33% - 20px); /* Adjusted flex-basis for better responsiveness */
     border-radius: 8px;
     display: flex;
     align-items: center;
     justify-content: space-around;
-
-}
-
-.box i{
-    font-size:40px
-}
-.box .data{
+  }
+  
+  .box i {
+    font-size: 40px;
+  }
+  
+  .box .data {
     text-align: center;
-}
-
-.box .data span{
+  }
+  
+  .box .data span {
     font-size: 30px;
-}
-table{
+  }
+  
+  table {
     width: 100%;
     text-align: center;
     border-spacing: 8px;
-
-}
-th,td{
+  }
+  
+  th,
+  td {
     background-color: rgb(240, 240, 240);
     height: 40px;
     border-radius: 8px;
-}
-th{
+  }
+  
+  th {
     background-color: #0481ff;
-}
-.distance , .fare{
+  }
+  
+  .distance,
+  .fare {
     padding: 6px;
     border-radius: 6px;
-}
-.distance{
+  }
+  
+  .distance {
     background-color: rgb(240, 240, 240);
-}
-.fare{
+  }
+  
+  .fare {
     background-color: rgb(240, 240, 240);
     color: black;
-}
-
-ul{
-    padding-left: 0;
-}
+  }
+  

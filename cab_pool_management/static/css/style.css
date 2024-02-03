@@ -173,6 +173,22 @@ body {
   height: 10px;
 }
 
+.hero-text-container {
+  display: inline-block;
+  padding: 15px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(253, 184, 19, 0.8);
+  margin-bottom: 10px;
+}
+
+.hero-text-1 {
+  font-size: 18px;
+  color: #333;
+  margin: 0;
+}
+
+
 ::-webkit-scrollbar-track {
   background: var(--white);
 }
