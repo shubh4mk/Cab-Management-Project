@@ -27,4 +27,4 @@ urlpatterns = [
     path('', include('authentication.urls')),
     path('', include('homepage.urls')),
 
-]
+] 
