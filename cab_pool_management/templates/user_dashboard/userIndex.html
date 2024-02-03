@@ -8,12 +8,12 @@
       <div class="img-box">
         <img src="{% static 'images/personImage.png' %}" alt="profile_image" />
       </div>
-      <h2>{{ user_name }}</h2>
+      <h2>Welcome {{ user.first_name }}</h2>
     </li>
     <li>
-      <a href="#" class="active">
+      <a href="#">
         <i class="fas fa-home"></i>
-        <p>Dashboarc</p>
+        <p>Dashboard</p>
       </a>
     </li>
     <li>
@@ -30,11 +30,13 @@
       </a>
     </li>
 
-    <li class="log-out">
-      <a href="#">
-        <i class="fas fa-sign-out"></i>
-        <p>Log Out</p>
-      </a>
+    <li >
+        <form method="POST" action="/signout" class="log-out">
+          {% csrf_token %}
+          <button type="submit" id="signout" name="signout">
+            <i class="fas fa-sign-out"></i>
+            <p>Log Out</p></button>
+        </form>
     </li>
   </ul>
 </div>
