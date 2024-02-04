@@ -10,7 +10,8 @@ def homepage(request):
             pickup=request.POST['start-location']
             drop=request.POST['end-location']
             user_id=request.user.id
-            #return render(request,"homepage/index.html",{'user':user_id})
+            trip_search=[ride_type,ride_pay,pickup,drop]
+            return redirect('bookcab',)
         else:
             return redirect('signin')
     return render(request,"homepage/index.html")

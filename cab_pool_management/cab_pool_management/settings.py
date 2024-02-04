@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'homepage',
     'authentication',
     'user_dashboard',
+    'cab_booking',
 ]
 
 MIDDLEWARE = [

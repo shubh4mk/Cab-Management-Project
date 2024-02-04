@@ -5,14 +5,21 @@ import datetime
 # Create your models here.
 class BookingDetails(models.Model):
     bookingID = models.UUIDField(auto_created=True, primary_key=True, default=uuid.uuid4)
-    car_model = models.TextField(max_length=20, blank=False)
+    carID = models.TextField(max_length=10, blank=False)
     start_location = models.TextField(max_length=50, blank=False)
     end_location = models.TextField(max_length=50, blank=False)
     booking_time = models.DateTimeField(default=datetime.datetime.now())
     booking_fare = models.IntegerField(blank=False)
+    trip_date = models.DateField(default=datetime.datetime.now())
+    userID = models.IntegerField(blank=False, default=0)
 
 class availableCab(models.Model):
-    cabID = models.TextField(max_length=10, blank=False)
-    cabModel = models.TextField(max_length=10, blank=False)
-    cabCapacity = models.IntegerField(blank=False)
-    
+    carID = models.TextField(max_length=10,blank=False, primary_key=True)
+    carModel = models.TextField(max_length=10, blank=False)
+    availableCapacity = models.IntegerField(blank=False, default=0)
+
+class carsAvailable(models.Model):
+    carID = models.TextField(max_length=10,blank=False,primary_key=True)
+    carModel = models.TextField(max_length=30,blank=False)
+    carCapacity = models.IntegerField(blank=False)
+    carNumber = models.TextField(max_length=20,blank=False, default = 0)

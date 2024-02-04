@@ -2,6 +2,7 @@
 .custom-table {
     width: 100%;
     border-collapse: collapse;
+    margin-top: 70px;
   }
   
   /* Table header styling */
@@ -12,6 +13,7 @@
     background-color: #f3f4f6;
     color: #718096;
     border: 1px solid #d2d6dc;
+    text-align: center;
   }
   
   /* Table row styling */

@@ -145,9 +145,7 @@ body {
 /* Style for the car type dropdown */
 .input-wrapper select {
   width: 100%;
-  padding: 10px;
-  margin-top: 5px;
-  margin-bottom: 15px;
+  padding: 5px;
   border: 1px solid #ccc;
   border-radius: 5px;
   box-sizing: border-box;
@@ -462,6 +460,7 @@ a {
   outline-offset: 5px;
   border-radius: 4px;
   transition: var(--transition);
+  padding: 5px;
 }
 
 .input-field:focus {
@@ -1071,7 +1070,7 @@ a {
 
   .hero-form {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 0.8fr;
+    grid-template-columns: 0.9fr 1.2fr 1fr 1fr 0.7fr;
   }
 
   .input-wrapper:not(:last-of-type) {
