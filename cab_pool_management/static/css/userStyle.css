@@ -60,7 +60,7 @@ ul li a{
 
 }
 ul li a:hover, .active , .box:hover, td:hover{
-  background-color: #ffffff55;
+  background-color: #ffffff;
 }
 .log-out{
   position: absolute;
@@ -145,4 +145,16 @@ th{
 
 ul{
   padding-left: 0;
+}
+
+button#signout {
+  display: block;
+  text-decoration: none;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 8px;
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  transition: 0.5s;
 }

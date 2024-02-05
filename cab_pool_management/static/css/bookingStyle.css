@@ -2,6 +2,7 @@
 .custom-table {
     width: 100%;
     border-collapse: collapse;
+    margin-top: 7px;
   }
   
   /* Table header styling */
@@ -12,6 +13,7 @@
     background-color: #f3f4f6;
     color: #718096;
     border: 1px solid #d2d6dc;
+    text-align: center;
   }
   
   /* Table row styling */
@@ -74,3 +76,12 @@
 .custom-table .action-link i {
     margin-right: 5px;
 }
+
+.hero-form {
+  max-width: 100%;
+  margin-top: 80px;
+  display: grid;
+  grid-template-columns: 0.9fr 1.2fr 1fr 1fr 0.7fr 1fr;
+}
+
+
