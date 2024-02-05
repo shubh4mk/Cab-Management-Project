@@ -2,7 +2,7 @@ from django.shortcuts import render
 from .models import BookingDetails, availableCab, carsAvailable
 
 # Create your views here.
-def booking(request):
+def booking(request,trip_search):
 
     carsAvail = carsAvailable.objects.all()
     cabBooked = BookingDetails.objects.filter(rideStatus=0).values_list('carID',flat=True)

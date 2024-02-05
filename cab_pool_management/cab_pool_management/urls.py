@@ -32,4 +32,3 @@ urlpatterns = [
     path('userindex',userIndex,name='userindex'),
     path('bookcab',booking,name="bookcab")
 ]
-
