@@ -12,6 +12,7 @@ class BookingDetails(models.Model):
     booking_fare = models.IntegerField(blank=False)
     trip_date = models.DateField(default=datetime.datetime.now())
     userID = models.IntegerField(blank=False, default=0)
+    rideStatus = models.IntegerField(blank=False,default=0) #0 Completed, 1 Active
 
 class availableCab(models.Model):
     carID = models.TextField(max_length=10,blank=False, primary_key=True)

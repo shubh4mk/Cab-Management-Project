@@ -26,7 +26,6 @@
   <div class="input-wrapper">
     <label for="input-3" class="input-label">Pick-Up</label>
     <select id="start-location" name="start-location" class="input-field">
-      <option value="sedan">Lavasa</option>
       <option value="suv">Pune Railway Station</option>
       <option value="sedan">Pune International Airport</option>
       <option value="suv">Phoenix Mall, Pune</option>
@@ -38,7 +37,6 @@
   <div class="input-wrapper">
     <label for="input-3" class="input-label">Destination</label>
     <select id="end-location" name="end-location" class="input-field">
-      <option value="sedan">Lavasa</option>
       <option value="suv">Pune Railway Station</option>
       <option value="sedan">Pune International Airport</option>
       <option value="suv">Phoenix Mall,Pune</option>
@@ -46,6 +44,26 @@
       <option value="suv">Swargate Bus Stop</option>
     </select>
   </div>
+
+  <div class="input-wrapper">
+    <label for="input-3" class="input-label">Capacity</label>
+    <select id="carCapacity" name="carCapacity" class="input-field">
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+    </select>
+  </div>
+
+  <div class="input-wrapper">
+    <label for="input-2" class="input-label">Ride Date</label>
+    <input
+      type="date"
+      name="tripDate"
+      id="inputdate"
+      class="input-field"
+    />
+  </div>
+  
   <button type="submit" class="btn">Search</button>
 </form>
 

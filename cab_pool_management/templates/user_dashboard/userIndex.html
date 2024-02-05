@@ -1,7 +1,6 @@
 {% extends 'base.html' %} {% load static %} {%block extrahead %}
 <link rel="stylesheet" href="{% static 'css/userStyle.css' %}" />
-{% endblock extrahead %} {% block content %}
-{% csrf_token %}
+{% endblock extrahead %} {% block content %} {% csrf_token %}
 <div class="menu">
   <ul>
     <li class="profile">
@@ -30,13 +29,14 @@
       </a>
     </li>
 
-    <li >
-        <form method="POST" action="/signout" class="log-out">
-          {% csrf_token %}
-          <button type="submit" id="signout" name="signout">
-            <i class="fas fa-sign-out"></i>
-            <p>Log Out</p></button>
-        </form>
+    <li>
+      <form method="POST" action="/signout" class="log-out">
+        {% csrf_token %}
+        <button type="submit" id="signout" name="signout" style="height: 60px; width: 170px;">
+          <i class="fas fa-sign-out"></i>
+          <p>Log Out</p>
+        </button>
+      </form>
     </li>
   </ul>
 </div>
