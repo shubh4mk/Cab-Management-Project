@@ -77,15 +77,15 @@ This is an example of how to list things you need to use the software and how to
    ![Reviews](https://github.com/shubh4mk/Cab-Management-Project/blob/main/readMeImages/9admindashboard.png)
 
 6. Booking Page
-   ![Booking Page](add your page image link from)
+   ![Booking Page](https://github.com/shubh4mk/Cab-Management-Project/blob/main/readMeImages/BookingPage.png)
 
 7. Final confirmation Receipt
-   ![Confirmation Receipt](add your page image link from)
+   ![Confirmation Receipt](https://github.com/shubh4mk/Cab-Management-Project/blob/main/readMeImages/bookingReceipt.jpg)
 
 # Project Members
 
 |CLASS|NAMES|REGISTERATION NUMBER|LINK |
 |-------------|-------------|---------------------------------------------|------------------|
-|MSC DS A|SHUBHAM KUMAR|23122033|[Click Here](https://github.com/shubh4mk/Cab-Management-Project.git)
+|MSC DS A|SHUBHAM KUMAR|23122033|[Click Here](https://github.com/shubh4mk)
 |MSC DS A|Thamizhanbu E|23122042|[Click Here](https://github.com/danush02)
 |MSC DS A|Trikalagga Saha|23122043|[Click Here](https://github.com/Trikalagga)
