@@ -88,6 +88,7 @@
         <th>Drop</th>
         <th>Fare</th>
         <th>Trip Date</th>
+        <th>Ride Status</th>
       </tr>
     </thead>
     {% for booking in bookings %}
@@ -101,6 +102,11 @@
         <td><span class="distance">{{booking.end_location}}</span></td>
         <td><span class="fare">₹{{booking.booking_fare}}</span></td>
         <td><span class="fare">{{booking.trip_date}}</span></td>
+        {% if booking.rideStatus is 1 %}
+        <td><span class="fare" style="background-color:#55d510;">Active</span></td>
+        {% else %}
+        <td><span class="fare">Completed</span></td>
+        {% endif %}
       </tr>
     </tbody>
     {%endfor%}
