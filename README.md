@@ -23,7 +23,7 @@ Here's why:
 
 ### Built With
 
-This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
+This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgments section. Here are a few examples.
 
 * ![](https://img.shields.io/badge/FrameWork-Django-informational?style=flat&logo=django&logoColor=yellow&color=4AB197)
 * ![](https://img.shields.io/badge/Code-HTML-informational?style=flat&logo=html&logoColor=yellow&color=4AB197)
@@ -44,7 +44,7 @@ This is an example of how to list things you need to use the software and how to
   ```sh
   pip install virtualenv
   ```
-* django
+* Django
   ```sh
   pip install django
   ```
@@ -55,13 +55,34 @@ This is an example of how to list things you need to use the software and how to
    ```sh
    git clone https://github.com/shubh4mk/Cab-Management-Project.git
    ```
-2. Install DJANGO framework
+2. Install the DJANGO framework
    ```sh
    pip install django
    ```
+### Working
 
+1. Signup  <br />
+   ![Signup](https://github.com/shubh4mk/Cab-Management-Project/blob/main/readMeImages/6SignUp.png)
 
-# Cab-Management-Project
+2. Login <br />
+   ![Login](https://github.com/shubh4mk/Cab-Management-Project/blob/main/readMeImages/7login.png)
+
+3. User Dashboard <br />
+   ![User Dashboard](https://github.com/shubh4mk/Cab-Management-Project/blob/main/readMeImages/8UserDashboard.png)
+
+4. Dynamic Reviews
+   ![Reviews](https://github.com/shubh4mk/Cab-Management-Project/blob/main/readMeImages/4DynamicReviews.png)
+
+5. Admin Dashboard (adminlte 3 template for now)
+   ![Reviews](https://github.com/shubh4mk/Cab-Management-Project/blob/main/readMeImages/9admindashboard.png)
+
+6. Booking Page
+   ![Booking Page](add your page image link from)
+
+7. Final confirmation Receipt
+   ![Confirmation Receipt](add your page image link from)
+
+# Project Members
 
 |CLASS|NAMES|REGISTERATION NUMBER|LINK |
 |-------------|-------------|---------------------------------------------|------------------|
