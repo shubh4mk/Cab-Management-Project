@@ -51,21 +51,21 @@
       <i class="fa-solid fa-car"></i>
       <div class="data">
         <p>Total Rides</p>
-        <span>16</span>
+        <span>{{rideCount}}</span>
       </div>
     </div>
     <div class="box">
       <i class="fa-solid fa-indian-rupee-sign"></i>
       <div class="data">
         <p>Amount Spent</p>
-        <span>15</span>
+        <span>{{totalAmount}}</span>
       </div>
     </div>
     <div class="box">
       <i class="fa-solid fa-location-dot"></i>
       <div class="data">
         <p>Most Visited</p>
-        <span>Lavasa</span>
+        <span>Phoenix Mall,Pune</span>
       </div>
     </div>
     <div class="box">
@@ -83,18 +83,27 @@
   <table>
     <thead>
       <tr>
-        <th>Car</th>
-        <th>Distance</th>
+        <th>Car Model</th>
+        <th>Pickup</th>
+        <th>Drop</th>
         <th>Fare</th>
+        <th>Trip Date</th>
       </tr>
     </thead>
+    {% for booking in bookings %}
     <tbody>
       <tr>
-        <td>Swift</td>
-        <td><span class="distance">60 Km</span></td>
-        <td><span class="fare">₹ 30</span></td>
+        {% for car in cars %}
+        {% if booking.carID == car.carID %}
+        <td>{{car.carModel}}</td>
+        {% endif %} {% endfor %}
+        <td><span class="distance">{{booking.start_location}}</span></td>
+        <td><span class="distance">{{booking.end_location}}</span></td>
+        <td><span class="fare">₹{{booking.booking_fare}}</span></td>
+        <td><span class="fare">{{booking.trip_date}}</span></td>
       </tr>
     </tbody>
+    {%endfor%}
   </table>
 </div>
 {% endblock content %}

@@ -1,10 +1,62 @@
-{% extends 'base.html' %} {% load static %}
-
-{% block content %}
-
-<div>
-   {% for bookings in booking_details %}
-    {{ bookings }}
-    {% endfor %}
-</div>
+{% extends 'base.html' %} {% load static %} {%block extrahead %}
+<style>
+  table {
+    border-collapse: collapse;
+    width: 50%;
+    margin: 20px auto;
+  }
+  th,
+  td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: center;
+  }
+  th {
+    background-color: #fdb813;
+  }
+</style>
+{% endblock extrahead %} {% block content %}
+<br /><br /><br /><br />
+<span style="text-align: center"><h1>Thank You For Booking</h1></span><br />
+<span style="text-align: center"><h3>Your Booking Details</h3></span>
+{% for bookings in booking_details %}
+<table
+  style="
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  "
+>
+  <tr>
+    <th>Booking Detail</th>
+    <th>Your Trip</th>
+  </tr>
+  <tr>
+    <td>Pick Up</td>
+    <td>{{ bookings.start_location }}</td>
+  </tr>
+  <tr>
+    <td>Drop</td>
+    <td>{{ bookings.end_location }}</td>
+  </tr>
+  <tr>
+    <td>Trip Fare</td>
+    <td>{{ bookings.booking_fare }}</td>
+  </tr>
+  <tr>
+    <td>Trip Date</td>
+    <td>{{ bookings.trip_date }}</td>
+  </tr>
+</table>
+{% endfor %}
+<span style="display: flex; justify-content: center"
+  ><button
+    type="button"
+    class="btn btn-warning"
+    style="width: 100px; border-color: white"
+  >
+    <a style="text-decoration: none; color: white" href="{% url 'homepage' %}"
+      >Home</a
+    >
+  </button></span
+>
 {% endblock content %}
