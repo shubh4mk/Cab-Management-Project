@@ -3,11 +3,12 @@
 {% endblock extrahead %} {% block content %}
 <form method="POST" class="hero-form">
   {% csrf_token %}
+  {% for rideSearch in ride_Search %}
   <div class="input-wrapper">
     <label for="ride-type" class="input-label">Ride Type</label>
-    <select id="ride-type" name="ride-type" class="input-field">
-      <option value="sedan">Solo Trip</option>
-      <option value="suv">Pool Trip</option>
+    <select id="ride-type" name="ride-type_b" class="input-field">
+      <option value="solo" {% if rideSearch.ride_type == "solo" %} selected {% endif %} >Solo Trip</option>
+      <option value="pool" {% if rideSearch.ride_type == "pool" %} selected {% endif %} >Pool Trip</option>
     </select>
   </div>
 
@@ -16,41 +17,43 @@
 
     <input
       type="text"
-      name="ride-pay"
+      name="ride-pay_b"
       id="input-2"
       class="input-field"
       placeholder="Add an amount in ₹"
+      value="{{ rideSearch.propose_fare }}"
     />
   </div>
 
   <div class="input-wrapper">
     <label for="input-3" class="input-label">Pick-Up</label>
-    <select id="start-location" name="start-location" class="input-field">
-      <option value="suv">Pune Railway Station</option>
-      <option value="sedan">Pune International Airport</option>
-      <option value="suv">Phoenix Mall, Pune</option>
-      <option value="sedan">Christ University, Pune</option>
-      <option value="suv">Swargate Bus Stop</option>
+    <select id="start-location" name="start-location_b" class="input-field">
+      <option value="Pune Railway Station" {% if rideSearch.pickup == "Pune Railway Station" %} selected {% endif %} >Pune Railway Station</option>
+      <option value="Pune International Airport" {% if rideSearch.pickup == "Pune International Airport" %} selected {% endif %}>Pune International Airport</option>
+      <option value="Phoenix Mall,Pune" {% if rideSearch.pickup == "Phoenix Mall,Pune" %} selected {% endif %}>Phoenix Mall, Pune</option>
+      <option value="Christ University,Pune" {% if rideSearch.pickup == "Christ University,Pune" %} selected {% endif %}>Christ University, Pune</option>
+      <option value="Swargate Bus Stop" {% if rideSearch.pickup == "Swargate Bus Stop" %} selected {% endif %}>Swargate Bus Stop</option>
     </select>
   </div>
 
   <div class="input-wrapper">
     <label for="input-3" class="input-label">Destination</label>
-    <select id="end-location" name="end-location" class="input-field">
-      <option value="suv">Pune Railway Station</option>
-      <option value="sedan">Pune International Airport</option>
-      <option value="suv">Phoenix Mall,Pune</option>
-      <option value="sedan">Christ University,Pune</option>
-      <option value="suv">Swargate Bus Stop</option>
+    <select id="end-location" name="end-location_b" class="input-field">
+      <option value="Pune Railway Station" {% if rideSearch.drop == "Pune Railway Station" %} selected {% endif %} >Pune Railway Station</option>
+      <option value="Pune International Airport" {% if rideSearch.drop == "Pune International Airport" %} selected {% endif %}>Pune International Airport</option>
+      <option value="Phoenix Mall,Pune" {% if rideSearch.drop == "Phoenix Mall,Pune" %} selected {% endif %}>Phoenix Mall, Pune</option>
+      <option value="Christ University,Pune" {% if rideSearch.drop == "Christ University,Pune" %} selected {% endif %}>Christ University, Pune</option>
+      <option value="Swargate Bus Stop" {% if rideSearch.drop == "Swargate Bus Stop" %} selected {% endif %}>Swargate Bus Stop</option>
     </select>
   </div>
 
   <div class="input-wrapper">
     <label for="input-3" class="input-label">Capacity</label>
-    <select id="carCapacity" name="carCapacity" class="input-field">
-      <option value="4">4</option>
-      <option value="5">5</option>
-      <option value="6">6</option>
+    <select id="carCapacity" name="carCapacity_b" class="input-field">
+      <option value=""></option>
+      <option value="4"{% if carCapacity == "4" %} selected {% endif %}>4</option>
+      <option value="5"{% if carCapacity == "5" %} selected {% endif %}>5</option>
+      <option value="6"{% if carCapacity == "6" %} selected {% endif %}>6</option>
     </select>
   </div>
 
@@ -58,26 +61,26 @@
     <label for="input-2" class="input-label">Ride Date</label>
     <input
       type="date"
-      name="tripDate"
+      name="tripDate_b"
       id="inputdate"
       class="input-field"
-    />
+      value="{{ rideDate }}"
+    />  
   </div>
-  
-  <button type="submit" class="btn">Search</button>
+  <button type="submit" class="btn" name="booking" value="search">Search</button>
 </form>
 
 
 <table class="custom-table">
     <thead>
         <tr>
-        <th class="header-cell">Ride Type</th>
+        <th class="header-cell">Car ID</th>
         <th class="header-cell">Capacity</th>
         <th class="header-cell">Car</th>
         <th class="header-cell">Start Location</th>
         <th class="header-cell">End location</th>
+        <th class="header-cell">Fare</th>
         <th class="header-cell">Available</th>
-        <th class="header-cell">Modify</th>
         </tr>
     </thead>
     {% for cabav in cab_available %}
@@ -86,17 +89,28 @@
         <td class="data-cell">{{ cabav.carID }}</td>
         <td class="data-cell">{{ cabav.availableCapacity }}</td>
         <td class="data-cell">{{ cabav.carModel }}</td>
-        <td class="data-cell">{{Dynamic}}</td>
-        <td class="data-cell">{{Dynamic}}</td>
-        <td class="data-cell status-cell">
-            <span class="status-badge deleted">BOOK</span>
-        </td>
+        <td class="data-cell">{{ rideSearch.pickup }}</td>
+        <td class="data-cell">{{ rideSearch.drop }}</td>
         <td class="data-cell actions-cell">
-            <a href="#" class="action-link">Edit</a>
-            <a href="#" class="action-link">Remove</a>
+          {% if cabav.availableCapacity == 4 %}
+          {{ cabFare }}
+          {% endif %}
+          {% if cabav.availableCapacity == 5 %}
+          {{ cabFare|add:500 }}
+          {% endif %}
+          {% if cabav.availableCapacity == 6 %}
+          {{ cabFare|add:600 }}
+          {% endif %}
+      </td>
+      <form method="POST">
+        {% csrf_token %}
+        <td class="data-cell status-cell">
+            <button type="submit" name="booking" value="{{ cabav.carID }}" class="status-badge deleted">BOOK</span>
         </td>
+      </form>
         </tr>
     </tbody>
+    {% endfor %}
     {% endfor %}
 </table>
 

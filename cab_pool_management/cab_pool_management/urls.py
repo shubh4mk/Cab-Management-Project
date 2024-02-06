@@ -19,7 +19,7 @@ from django.urls import path, include
 from homepage.views import homepage,aboutus
 from authentication.views import signin,signout,signup
 from user_dashboard.views import userIndex
-from cab_booking.views import booking
+from cab_booking.views import booking,booking_done
 
 
 urlpatterns = [
@@ -30,5 +30,6 @@ urlpatterns = [
     path('signin', signin, name="signin"),
     path('signout',signout, name="signout"),
     path('userindex',userIndex,name='userindex'),
-    path('bookcab',booking,name="bookcab")
+    path('bookcab',booking,name="bookcab"),
+    path('booking',booking_done,name="bookingdone")
 ]

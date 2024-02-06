@@ -1,6 +1,25 @@
 {% extends 'base.html' %} {% load static %} {% block extrahead %}
 <link rel="stylesheet" href="{% static 'css/style.css' %}" />
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<style>
+.alert {
+  padding: 20px;
+  background-color: #f44336;
+  color: white;
+  width: 300px;
+}
+
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+</style>
 {% endblock extrahead %} {% block content %}
 <main>
   <article>
@@ -20,7 +39,12 @@
           </div>
           {% endif %}
         </div>
-
+        {% if location_error_message %}
+        <div class="alert">
+          <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+          <strong>{{ location_error_message }}</strong>
+        </div>  
+        {% endif %}
         <div class="hero-banner"></div>
         <form method="POST" class="hero-form">
           {% csrf_token %}
@@ -62,10 +86,10 @@
           <div class="input-wrapper">
             <label for="input-3" class="input-label">Destination</label>
             <select id="end-location" name="end-location" class="input-field">
+              <option value="Christ University,Pune">Christ University, Pune</option>
               <option value="Pune Railway Station">Pune Railway Station</option>
               <option value="Pune International Airport">Pune International Airport</option>
               <option value="Phoenix Mall,Pune">Phoenix Mall, Pune</option>
-              <option value="Christ University,Pune">Christ University, Pune</option>
               <option value="Swargate Bus Stop">Swargate Bus Stop</option>
             </select>
           </div>
