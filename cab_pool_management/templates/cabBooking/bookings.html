@@ -77,7 +77,7 @@
     <thead>
         <tr>
         <th class="header-cell">Car ID</th>
-        <th class="header-cell">Capacity</th>
+        <th class="header-cell">Available Seats</th>
         <th class="header-cell">Car</th>
         <th class="header-cell">Start Location</th>
         <th class="header-cell">End location</th>
@@ -85,8 +85,27 @@
         <th class="header-cell">Available</th>
         </tr>
     </thead>
-    {% for cabav in cab_available %}
+    {% if rideType == "pool" %}
     <tbody>
+    {% for poolcabav in availPoolRides %}
+        <tr class="data-row">
+          <td class="data-cell">{{ poolcabav.carID }}</td>
+          <td class="data-cell">{{ poolcabav.seats_booked }} / {{ poolcabav.carCapacity }}</td>
+          {% for cabav in carsAvail %}
+          {% if cabav.carID == poolcabav.carID %}
+          <td class="data-cell">{{ cabav.carModel }}</td>
+          {% endif %} {% endfor %}
+          <td class="data-cell">{{ poolcabav.start_location }}</td>
+          <td class="data-cell">{{ poolcabav.end_location }}</td>
+          <td class="data-cell">{{ poolcabav.booking_fare_pu }}</td>
+          <form method="POST">
+            {% csrf_token %}
+            <td class="data-cell status-cell">
+                <button type="submit" name="booking" value="{{ cabav.carID }}" class="status-badge deleted">BOOK</span>
+            </td>
+          </form>
+    {%endfor%}
+    {% for cabav in cab_available %}
         <tr class="data-row">
         <td class="data-cell">{{ cabav.carID }}</td>
         <td class="data-cell">{{ cabav.availableCapacity }}</td>
@@ -113,6 +132,39 @@
         </tr>
     </tbody>
     {% endfor %}
+    {% else %}
+    {% for cabav in cab_available %}
+        <tr class="data-row">
+        <td class="data-cell">{{ cabav.carID }}</td>
+        <td class="data-cell">{{ cabav.availableCapacity }}</td>
+        <td class="data-cell">{{ cabav.carModel }}</td>
+        <td class="data-cell">{{ rideSearch.pickup }}</td>
+        <td class="data-cell">{{ rideSearch.drop }}</td>
+        <td class="data-cell actions-cell">
+          {% if cabav.availableCapacity == 4 %}
+          {{ cabFare }}
+          {% endif %}
+          {% if cabav.availableCapacity == 5 %}
+          {{ cabFare|add:500 }}
+          {% endif %}
+          {% if cabav.availableCapacity == 6 %}
+          {{ cabFare|add:600 }}
+          {% endif %}
+      </td>
+      <form method="POST">
+        {% csrf_token %}
+        <td class="data-cell status-cell">
+            <button type="submit" name="booking" value="{{ cabav.carID }}" class="status-badge deleted">BOOK</span>
+        </td>
+      </form>
+        </tr>
+    </tbody>
+    {% endfor %}
+
+
+
+
+    {% endif %}
     {% endfor %}
 </table>
 
