@@ -121,7 +121,6 @@ def booking(request):
                                                 userID=request.user.id,
                                                 rideStatus=1, carCapacity=capacity,seats_booked=seats_booked,
                                                 trip_date=rideDate)
-                    poolBook.save()
                     active_cab = poolRideBooking.objects.filter(rideStatus=1,trip_date=ride_date,userID=user_id).values_list('carID',flat=True)
                     if carID in active_cab:
                         pass
@@ -129,7 +128,7 @@ def booking(request):
                         poolBook.save()
                     booking_detail = poolRideBooking.objects.filter(userID=request.user.id,trip_date=ride_date).filter(carID=carID).filter(rideStatus=1)
 
-                return render(request,'cabBooking/booking_done.html',{'booking_details' : booking_detail})
+                return render(request,'cabBooking/booking_done.html',{'booking_details' : booking_detail,'rideType':ride_type})
         else:
             rideSearch = searchTrip.objects.all()
             ride_type = searchTrip.objects.values_list('ride_type',flat=True).first()
@@ -159,11 +158,18 @@ def booking(request):
     
     elif userObj.is_staff==1:
         if request.POST:
-            carID = request.POST["booking"]
-            BookingDetails.objects.filter(carID=carID).filter(rideStatus=1).update(rideStatus=0)
+            carID_tripDate = request.POST["booking"]
+            carID = carID_tripDate.split(";")[0]
+            tripDate = carID_tripDate.split(";")[1]
+            date_obj = datetime.strptime(tripDate, "%b. %d, %Y")
+            ride_date = date_obj.strftime("%Y-%m-%d")
+            carID_solo =  BookingDetails.objects.filter(carID=carID).filter(rideStatus=1)
+            carID_pool = poolRideBooking.objects.filter(carID=carID).filter(rideStatus=1)
+            BookingDetails.objects.filter(carID=carID).filter(rideStatus=1).filter(trip_date=ride_date).update(rideStatus=0)
         activeBookings = BookingDetails.objects.filter(rideStatus=1)
+        activepoolBookings = poolRideBooking.objects.filter(rideStatus=1)
         carsAvail = carsAvailable.objects.all()
-        return render(request,'cabBooking/bookings.html',{'cab_available':activeBookings,'carsAvail':carsAvail})
+        return render(request,'cabBooking/bookings.html',{'cab_available':activeBookings,'carsAvail':carsAvail,'pool_cab_available':activepoolBookings})
 
 
 def booking_done(request):

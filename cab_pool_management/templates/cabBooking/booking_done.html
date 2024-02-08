@@ -31,6 +31,10 @@
     <th>Your Trip</th>
   </tr>
   <tr>
+    <td>Ride Type</td>
+    <td>{{ rideType }}</td>
+  </tr>
+  <tr>
     <td>Pick Up</td>
     <td>{{ bookings.start_location }}</td>
   </tr>
@@ -39,8 +43,13 @@
     <td>{{ bookings.end_location }}</td>
   </tr>
   <tr>
+    {% if rideType == "solo" %}
     <td>Trip Fare</td>
     <td>{{ bookings.booking_fare }}</td>
+    {% elif rideType == "pool" %}
+    <td>Trip Fare</td>
+    <td>{{ bookings.booking_fare_pu }}</td>
+    {% endif %}
   </tr>
   <tr>
     <td>Trip Date</td>

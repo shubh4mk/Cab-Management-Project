@@ -101,7 +101,7 @@
           <form method="POST">
             {% csrf_token %}
             <td class="data-cell status-cell">
-                <button type="submit" name="booking" value="{{ cabav.carID }}" class="status-badge deleted">BOOK</span>
+                <button type="submit" name="booking" value="{{ poolcabav.carID }}" class="status-badge deleted">BOOK</span>
             </td>
           </form>
     {%endfor%}
@@ -169,6 +169,7 @@
 </table>
 
 {% elif user.is_authenticated and user.is_staff %}
+
 <br><br><br>
 <span style="text-align: center; color:#fdb813;"><h1>Active Rides</h1></span>
 <table class="custom-table">
@@ -200,7 +201,29 @@
     <form method="POST">
       {% csrf_token %}
       <td class="data-cell status-cell">
-          <button type="submit" name="booking" value="{{ cabav.carID }}" class="status-badge deleted">ACTIVE</span>
+          <button type="submit" name="booking" value="{{ cabav.carID }};{{ cabav.trip_date }}" class="status-badge deleted">ACTIVE</span>
+      </td>
+    </form>
+      </tr>
+  </tbody>
+  {% endfor %}
+  {% for cabav in pool_cab_available %}
+  <tbody>
+      <tr class="data-row">
+      <td class="data-cell">{{ cabav.carID }}</td>
+      <td class="data-cell">{{ cabav.userID }}</td>
+      {% for cars in carsAvail %}
+       {% if cars.carID == cabav.carID %}
+        <td class="data-cell">{{ cars.carModel }}</td>
+       {% endif %} {% endfor %}
+      <td class="data-cell">{{ cabav.start_location }}</td>
+      <td class="data-cell">{{ cabav.end_location }}</td>
+      <td class="data-cell actions-cell">{{ cabav.booking_fare_pu }}</td>
+      <td class="data-cell actions-cell">{{ cabav.trip_date }}</td>
+    <form method="POST">
+      {% csrf_token %}
+      <td class="data-cell status-cell">
+          <button type="submit" name="booking" value="{{ cabav.carID }};{{ cabav.trip_date }}" class="status-badge deleted">ACTIVE</span>
       </td>
     </form>
       </tr>
