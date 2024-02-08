@@ -166,6 +166,7 @@ def booking(request):
             carID_solo =  BookingDetails.objects.filter(carID=carID).filter(rideStatus=1)
             carID_pool = poolRideBooking.objects.filter(carID=carID).filter(rideStatus=1)
             BookingDetails.objects.filter(carID=carID).filter(rideStatus=1).filter(trip_date=ride_date).update(rideStatus=0)
+            poolRideBooking.objects.filter(carID=carID).filter(rideStatus=1).filter(trip_date=ride_date).update(rideStatus=0)
         activeBookings = BookingDetails.objects.filter(rideStatus=1)
         activepoolBookings = poolRideBooking.objects.filter(rideStatus=1)
         carsAvail = carsAvailable.objects.all()
