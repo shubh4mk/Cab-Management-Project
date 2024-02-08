@@ -50,29 +50,29 @@
     <div class="box">
       <i class="fa-solid fa-car"></i>
       <div class="data">
-        <p>Total Rides</p>
+        <p>Total Rides Solo</p>
         <span>{{rideCount}}</span>
       </div>
     </div>
     <div class="box">
       <i class="fa-solid fa-indian-rupee-sign"></i>
       <div class="data">
-        <p>Amount Spent</p>
+        <p>Amount Spent Solo</p>
         <span>{{totalAmount}}</span>
       </div>
     </div>
-    <div class="box">
-      <i class="fa-solid fa-location-dot"></i>
+    <div class="box" style="background-color:#51a5dd;">
+      <i class="fa-solid fa-car"></i>
       <div class="data">
-        <p>Most Visited</p>
-        <span>Phoenix Mall,Pune</span>
+        <p>Total Rides Pool</p>
+        <span>{{ridepoolcount}}</span>
       </div>
     </div>
-    <div class="box">
-      <i class="fa-solid fa-thumbs-down"></i>
+    <div class="box" style="background-color:#51a5dd;">
+      <i class="fa-solid fa-indian-rupee-sign"></i>
       <div class="data">
-        <p>Dislikes</p>
-        <span>2</span>
+        <p>Amount Spent Pool</p>
+        <span>{{totalpoolamount}}</span>
       </div>
     </div>
   </div>
@@ -83,6 +83,7 @@
   <table>
     <thead>
       <tr>
+        <th>Ride Type</th>
         <th>Car Model</th>
         <th>Pickup</th>
         <th>Drop</th>
@@ -94,6 +95,7 @@
     {% for booking in bookings %}
     <tbody>
       <tr>
+        <td><span class="distance">Solo Ride</span></td>
         {% for car in cars %}
         {% if booking.carID == car.carID %}
         <td>{{car.carModel}}</td>
@@ -101,6 +103,26 @@
         <td><span class="distance">{{booking.start_location}}</span></td>
         <td><span class="distance">{{booking.end_location}}</span></td>
         <td><span class="fare">₹{{booking.booking_fare}}</span></td>
+        <td><span class="fare">{{booking.trip_date}}</span></td>
+        {% if booking.rideStatus is 1 %}
+        <td><span class="fare" style="background-color:#55d510;">Active</span></td>
+        {% else %}
+        <td><span class="fare">Completed</span></td>
+        {% endif %}
+      </tr>
+    </tbody>
+    {%endfor%}
+    {% for booking in poolride %}
+    <tbody>
+      <tr>
+        <td><span class="distance">Pool Ride</span></td>
+        {% for car in cars %}
+        {% if booking.carID == car.carID %}
+        <td>{{car.carModel}}</td>
+        {% endif %} {% endfor %}
+        <td><span class="distance">{{booking.start_location}}</span></td>
+        <td><span class="distance">{{booking.end_location}}</span></td>
+        <td><span class="fare">₹{{booking.booking_fare_pu}}</span></td>
         <td><span class="fare">{{booking.trip_date}}</span></td>
         {% if booking.rideStatus is 1 %}
         <td><span class="fare" style="background-color:#55d510;">Active</span></td>
